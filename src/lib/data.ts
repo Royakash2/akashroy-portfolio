@@ -10,6 +10,9 @@ export const personalInfo = {
     "Full-stack developer with 4+ years of experience building modern web applications. Passionate about clean code, intuitive UIs, and scalable systems.",
   avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
   resumeUrl: "#",
+  currentRole: "Software Engineer",
+  currentCompany: "Google",
+  currentCompanyLogo: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=100&h=100&fit=crop",
   socials: {
     github: "https://github.com/akashsharma",
     linkedin: "https://linkedin.com/in/akashsharma",
@@ -82,6 +85,7 @@ export const experience = [
     id: 1,
     company: "TechStack Inc.",
     role: "Senior Frontend Developer",
+    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=100&h=100&fit=crop",
     location: "San Francisco, CA",
     period: "Jan 2024 — Present",
     description:
@@ -97,6 +101,7 @@ export const experience = [
     id: 2,
     company: "WebCraft Agency",
     role: "Full Stack Developer",
+    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop",
     location: "Remote",
     period: "Jun 2022 — Dec 2023",
     description:
@@ -112,6 +117,7 @@ export const experience = [
     id: 3,
     company: "StartupLabs",
     role: "Junior Developer",
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop",
     location: "New York, NY",
     period: "Aug 2021 — May 2022",
     description:
@@ -127,6 +133,7 @@ export const experience = [
     id: 4,
     company: "Freelance",
     role: "Web Developer",
+    logo: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=100&h=100&fit=crop",
     location: "Remote",
     period: "Jan 2021 — Jul 2021",
     description:
@@ -143,6 +150,7 @@ export const education = [
   {
     id: 1,
     institution: "University of California, Berkeley",
+    logo: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=100&h=100&fit=crop",
     degree: "B.S. in Computer Science",
     period: "2018 — 2021",
     gpa: "3.7/4.0",
@@ -155,6 +163,7 @@ export const education = [
   {
     id: 2,
     institution: "Coursera / online",
+    logo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=100&h=100&fit=crop",
     degree: "Specializations & Certificates",
     period: "2020 — 2024",
     highlights: [
@@ -209,5 +218,34 @@ export const projects = [
     liveUrl: "https://shoplocal.vercel.app",
     repoUrl: "https://github.com/akashsharma/shoplocal",
     featured: false,
+    period: "2021",
   },
 ];
+
+export const hackathons = [
+  {
+    id: 1,
+    title: "Hack The North",
+    dates: "September 15-17, 2023",
+    location: "Waterloo, Ontario",
+    description: "Developed a computer vision application that translates sign language to text in real-time.",
+    logo: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=100&h=100&fit=crop"
+  },
+  {
+    id: 2,
+    title: "CalHacks",
+    dates: "October 22-24, 2022",
+    location: "Berkeley, CA",
+    description: "Built a decentralized voting system using Ethereum smart contracts.",
+    logo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=100&h=100&fit=crop"
+  },
+  {
+    id: 3,
+    title: "MIT Reality Hack",
+    dates: "March 10-12, 2022",
+    location: "Cambridge, MA",
+    description: "Created an AR experience for visually impaired individuals to navigate indoor spaces.",
+    logo: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=100&h=100&fit=crop"
+  }
+];
+
