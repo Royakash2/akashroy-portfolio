@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Dock from "@/components/dock";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,13 +28,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className="min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6">
+        <main className="flex flex-col min-h-[100dvh] space-y-10">
+          {children}
+        </main>
+        <Dock />
       </body>
     </html>
   );
