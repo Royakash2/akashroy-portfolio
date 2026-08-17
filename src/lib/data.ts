@@ -10,9 +10,9 @@ export const personalInfo = {
     "Full-stack developer with 4+ years of experience building modern web applications. Passionate about clean code, intuitive UIs, and scalable systems.",
   avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
   resumeUrl: "#",
-  currentRole: "Software Engineer",
-  currentCompany: "Google",
-  currentCompanyLogo: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=100&h=100&fit=crop",
+  currentRole: "",
+  currentCompany: "",
+  currentCompanyLogo: "",
   socials: {
     github: "https://github.com/akashsharma",
     linkedin: "https://linkedin.com/in/akashsharma",
