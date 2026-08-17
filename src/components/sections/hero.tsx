@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="hero" className="flex items-center justify-between">
       <div className="flex-1 space-y-2.5">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-          Hi, I&apos;m {nameParts[0]} 
+          Hi, I&apos;m {nameParts[0]}
         </h1>
         <p className="max-w-[600px] text-muted-foreground text-sm sm:text-base">
           {personalInfo.title}
