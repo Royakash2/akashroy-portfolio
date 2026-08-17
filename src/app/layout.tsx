@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Dock from "@/components/dock";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,14 +29,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} scroll-smooth dark`}
+      className={`${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6">
-        <main className="flex flex-col min-h-[100dvh] space-y-10">
-          {children}
-        </main>
-        <Dock />
+        <ThemeProvider>
+          <main className="flex flex-col min-h-[100dvh] space-y-10">
+            {children}
+          </main>
+          <Dock />
+        </ThemeProvider>
       </body>
     </html>
   );
