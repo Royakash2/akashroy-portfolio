@@ -180,7 +180,7 @@ export const projects = [
     title: "TaskFlow",
     description:
       "A modern project management app with real-time collaboration, drag-and-drop boards, and team analytics.",
-    image: "/project-1.jpg",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
     tags: ["React", "Next.js", "PostgreSQL", "Prisma", "WebSocket"],
     liveUrl: "https://taskflow-demo.vercel.app",
     repoUrl: "https://github.com/akashsharma/taskflow",
@@ -191,7 +191,7 @@ export const projects = [
     title: "MarketViz",
     description:
       "Interactive data visualization platform for market research, featuring customizable dashboards and real-time data ingestion.",
-    image: "/project-2.jpg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     tags: ["React", "D3.js", "Node.js", "MongoDB", "TypeScript"],
     liveUrl: "https://marketviz.vercel.app",
     repoUrl: "https://github.com/akashsharma/marketviz",
@@ -202,7 +202,7 @@ export const projects = [
     title: "DevMetrics",
     description:
       "Developer analytics dashboard that tracks code quality, productivity metrics, and team velocity across GitHub repositories.",
-    image: "/project-3.jpg",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
     tags: ["Next.js", "Python", "GitHub API", "PostgreSQL", "Tailwind CSS"],
     liveUrl: "https://devmetrics.vercel.app",
     repoUrl: "https://github.com/akashsharma/devmetrics",
@@ -213,7 +213,7 @@ export const projects = [
     title: "ShopLocal",
     description:
       "E-commerce platform connecting local businesses with customers, featuring inventory management and local delivery scheduling.",
-    image: "/project-4.jpg",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
     tags: ["React", "Node.js", "Express", "PostgreSQL", "Stripe"],
     liveUrl: "https://shoplocal.vercel.app",
     repoUrl: "https://github.com/akashsharma/shoplocal",
