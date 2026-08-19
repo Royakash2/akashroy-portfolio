@@ -13,7 +13,7 @@ export default function Projects() {
         </span>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Check out my latest work</h2>
         <p className="max-w-[600px] text-muted-foreground text-sm sm:text-base">
-          I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
+          I&apos;ve worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
         </p>
       </div>
 

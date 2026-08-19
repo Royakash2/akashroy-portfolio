@@ -4,7 +4,8 @@ import Link from "next/link";
 import { Home, NotebookPen, Briefcase, Pencil, Mail, Sun, Moon } from "lucide-react";
 import { TbBrandX, TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
 import { personalInfo } from "@/lib/data";
-import { useTheme } from "next-themes";
+import { useTheme } from "@wrksz/themes/client";
+
 
 const dockItems = [
   { icon: Home, href: "/", label: "Home" },
