@@ -1,13 +1,13 @@
 export const personalInfo = {
-  name: "Akash Sharma",
-  title: "Full Stack Developer",
+  name: "Akash Roy",
+  title: "Next.js React MERN Stack Developer",
   email: "akash.sharma@email.com",
   phone: "+1 (555) 123-4567",
   location: "San Francisco, CA",
   website: "akashsharma.dev",
   availability: "Open to opportunities",
   shortBio:
-    "Full-stack developer with 4+ years of experience building modern web applications. Passionate about clean code, intuitive UIs, and scalable systems.",
+    "Next.js React MERN Stack Developer. I love building things and helping people. Very active on Twitter.",
   avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
   resumeUrl: "#",
   currentRole: "",
