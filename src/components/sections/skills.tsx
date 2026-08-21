@@ -29,14 +29,14 @@ export default function Skills() {
   return (
     <section id="skills" className="flex flex-col space-y-6">
       <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Skills</h2>
-      <div className="flex flex-wrap gap-3 sm:gap-4">
+      <div className="flex flex-wrap gap-2 sm:gap-2.5">
         {skillIcons.map((skill, idx) => (
           <div 
             key={idx} 
-            className="flex items-center gap-2.5 rounded-full bg-zinc-100 dark:bg-[#1c1c1c] px-4 py-2.5 text-sm sm:text-base font-medium text-zinc-900 dark:text-gray-200 border border-zinc-200 dark:border-white/10 shadow-sm transition-transform hover:scale-105"
+            className="flex items-center gap-2 rounded-full bg-zinc-100 dark:bg-[#1c1c1c] px-3.5 py-2 text-xs sm:text-sm font-medium text-zinc-900 dark:text-gray-200 border border-zinc-200 dark:border-white/10 transition-transform hover:scale-105"
           >
             <skill.icon 
-              className="text-lg sm:text-xl" 
+              className="text-base sm:text-lg" 
               style={{ color: skill.color !== "currentColor" ? skill.color : undefined }} 
             />
             <span>{skill.name}</span>
