@@ -1,19 +1,46 @@
-import { skills } from "@/lib/data";
+import { 
+  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFramer, 
+  SiNodedotjs, SiPython, SiGraphql, SiPostgresql, SiRedis, 
+  SiDocker, SiVercel, SiGithubactions, SiLinux, 
+  SiCloudflare 
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+
+const skillIcons = [
+  { name: "React", icon: SiReact, color: "#61DAFB" },
+  { name: "Next.js", icon: SiNextdotjs, color: "currentColor" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Framer Motion", icon: SiFramer, color: "#bb44f0" },
+  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
+  { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+  { name: "Redis", icon: SiRedis, color: "#DC382D" },
+  { name: "Docker", icon: SiDocker, color: "#2496ED" },
+  { name: "AWS", icon: FaAws, color: "#FF9900" },
+  { name: "Vercel", icon: SiVercel, color: "currentColor" },
+  { name: "CI/CD", icon: SiGithubactions, color: "#2088FF" },
+  { name: "Linux", icon: SiLinux, color: "#FCC624" },
+  { name: "CloudFlare", icon: SiCloudflare, color: "#F38020" },
+];
 
 export default function Skills() {
-  const allSkills = skills.flatMap(s => s.items);
-
   return (
-    <section id="skills" className="flex flex-col space-y-4">
-      <h2 className="text-xl font-bold tracking-tight">Skills</h2>
-      <div className="flex flex-wrap gap-2">
-        {allSkills.map((skill, idx) => (
-          <span 
+    <section id="skills" className="flex flex-col space-y-6">
+      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Skills</h2>
+      <div className="flex flex-wrap gap-3 sm:gap-4">
+        {skillIcons.map((skill, idx) => (
+          <div 
             key={idx} 
-            className="inline-flex items-center rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary"
+            className="flex items-center gap-2.5 rounded-full bg-zinc-100 dark:bg-[#1c1c1c] px-4 py-2.5 text-sm sm:text-base font-medium text-zinc-900 dark:text-gray-200 border border-zinc-200 dark:border-white/10 shadow-sm transition-transform hover:scale-105"
           >
-            {skill}
-          </span>
+            <skill.icon 
+              className="text-lg sm:text-xl" 
+              style={{ color: skill.color !== "currentColor" ? skill.color : undefined }} 
+            />
+            <span>{skill.name}</span>
+          </div>
         ))}
       </div>
     </section>
