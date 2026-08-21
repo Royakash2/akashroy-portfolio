@@ -33,7 +33,7 @@ export default function Skills() {
         {skillIcons.map((skill, idx) => (
           <div 
             key={idx} 
-            className="flex items-center gap-2 rounded-full bg-zinc-100 dark:bg-[#1c1c1c] px-3.5 py-2 text-xs sm:text-sm font-medium text-zinc-900 dark:text-gray-200 border border-zinc-200 dark:border-white/10 transition-transform hover:scale-105"
+            className="flex items-center gap-2 rounded-full bg-zinc-100 dark:bg-[#1c1c1c] px-3.5 py-2 text-xs sm:text-sm font-medium text-zinc-900 dark:text-gray-200 border border-zinc-200 dark:border-white/10"
           >
             <skill.icon 
               className="text-base sm:text-lg" 
