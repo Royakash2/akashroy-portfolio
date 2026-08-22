@@ -1,17 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Home, NotebookPen, Briefcase, Pencil, Mail, Sun, Moon } from "lucide-react";
+import { Home, Briefcase, Mail, Sun, Moon } from "lucide-react";
 import { TbBrandX, TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
 import { personalInfo } from "@/lib/data";
 import { useTheme } from "@wrksz/themes/client";
 
-
 const dockItems = [
   { icon: Home, href: "/", label: "Home" },
-  { icon: NotebookPen, href: "#about", label: "About" },
-  { icon: Briefcase, href: "#experience", label: "Experience" },
-  { icon: Pencil, href: "#projects", label: "Projects" },
+  { icon: Briefcase, href: "/projects", label: "Projects" },
 ];
 
 const socialItems = [
@@ -21,7 +18,7 @@ const socialItems = [
   { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
 ];
 
-export default function Dock() {
+export default function FloatingNav() {
   const { resolvedTheme, setTheme } = useTheme();
 
   return (
