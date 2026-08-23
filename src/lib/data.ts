@@ -22,15 +22,13 @@ export const personalInfo = {
 
 export const about = {
   paragraphs: [
-    "I'm a full-stack developer based in San Francisco with a strong focus on frontend engineering. I specialize in building modern web applications using React, Next.js, TypeScript, and Node.js technologies.",
-    "Over the past 4 years, I've worked with startups and agencies to deliver robust, user-friendly products. I enjoy collaborating with designers and product teams to turn ideas into polished, performant experiences.",
-    "When I'm not coding, you'll find me exploring new tech, contributing to open-source projects, or writing technical blog posts to share what I've learned.",
+    "At the end of 2025, I quit my job as a web developer after just 6 months to go all-in on building my own projects and growing as a developer. I started learning web development in 2023, and within two years I was already working professionally with React, Next.js, JavaScript, and PostgreSQL. Now I'm doubling down on the full MERN stack and ready to build things that matter.",
   ],
   highlights: [
-    { label: "Years Experience", value: "4+" },
-    { label: "Projects Completed", value: "25+" },
-    { label: "Happy Clients", value: "15+" },
-    { label: "Open Source Contributions", value: "30+" },
+    { label: "Years Experience", value: "2+" },
+    { label: "Projects Completed", value: "10+" },
+    { label: "Happy Clients", value: "5+" },
+    { label: "Open Source Contributions", value: "10+" },
   ],
 };
 
