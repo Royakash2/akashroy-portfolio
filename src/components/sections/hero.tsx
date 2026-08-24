@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Download } from "lucide-react";
-import { TbBrandGithub, TbBrandLinkedin, TbBrandX } from "react-icons/tb";
-import { MdEmail } from "react-icons/md";
+
 import { personalInfo } from "@/lib/data";
 
 // Free-to-use landscape banner from Unsplash (nature road, like the reference)
@@ -12,12 +11,7 @@ const BANNER_URL =
 const AVATAR_URL =
   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80";
 
-const socials = [
-  { icon: TbBrandGithub, href: personalInfo.socials?.github || "#", label: "GitHub" },
-  { icon: TbBrandLinkedin, href: personalInfo.socials?.linkedin || "#", label: "LinkedIn" },
-  { icon: TbBrandX, href: personalInfo.socials?.twitter || "#", label: "Twitter" },
-  { icon: MdEmail, href: `mailto:${personalInfo.email}`, label: "Email" },
-];
+
 
 export default function Hero() {
   return (
@@ -74,30 +68,10 @@ export default function Hero() {
           part of it.
         </p>
 
-        {/* CTA Button */}
-        <div>
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 mt-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-muted transition-colors"
-          >
-            Let&apos;s build something new. →
-          </Link>
-        </div>
 
-        {/* Social Icons + Resume */}
+
+        {/* Buttons: Resume & Contact */}
         <div className="flex items-center gap-4 pt-2 flex-wrap">
-          {socials.map((s) => (
-            <Link
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              aria-label={s.label}
-              className="text-foreground hover:text-muted-foreground transition-colors"
-            >
-              <s.icon size={22} />
-            </Link>
-          ))}
-
           <a
             href={personalInfo.resumeUrl}
             download
@@ -106,6 +80,12 @@ export default function Hero() {
             <Download size={14} />
             Resume
           </a>
+          <Link
+            href="#contact"
+            className="inline-flex items-center gap-1.5 rounded-full bg-foreground text-background px-5 py-1.5 text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </section>
