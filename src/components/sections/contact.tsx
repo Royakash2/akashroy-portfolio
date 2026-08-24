@@ -1,40 +1,64 @@
 import Link from "next/link";
+import { TbBrandGithub, TbBrandLinkedin, TbBrandX } from "react-icons/tb";
+
 import { personalInfo } from "@/lib/data";
+
+const socials = [
+  { icon: TbBrandGithub, href: personalInfo.socials?.github || "#", label: "GitHub" },
+  { icon: TbBrandLinkedin, href: personalInfo.socials?.linkedin || "#", label: "LinkedIn" },
+  { icon: TbBrandX, href: personalInfo.socials?.twitter || "#", label: "Twitter" },
+];
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-12 sm:py-20">
-      <div className="relative w-full rounded-xl border border-zinc-300 dark:border-zinc-600 bg-background px-6 py-16 sm:py-24 text-center">
-        
-        {/* Soft top gradient replacing the dots */}
-        <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-zinc-100 to-transparent dark:from-white/5" />
-        </div>
+    <section id="contact" className="flex flex-col items-center text-center space-y-8 pb-24 pt-8">
 
-        {/* Contact Badge overlapping the top border */}
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-          <div className="inline-flex items-center rounded-full bg-zinc-900 dark:bg-zinc-100 px-5 py-1.5 text-sm font-medium text-white dark:text-zinc-900 shadow-md">
-            Contact
-          </div>
+      {/* Contact badge with horizontal lines */}
+      <div className="relative w-full flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full border-t border-border" />
         </div>
-        
-        {/* Content */}
-        <div className="relative z-10 space-y-6">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-6xl text-zinc-900 dark:text-white">
-            Get in Touch
-          </h2>
-          <p className="max-w-[600px] mx-auto text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Want to chat? Just shoot me a dm{" "}
-            <Link 
-              href={personalInfo.socials?.twitter || "#"} 
-              className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
-            >
-              with a direct question on twitter
-            </Link>{" "}
-            and I&apos;ll respond whenever I can. I will ignore all soliciting.
-          </p>
+        <div className="relative flex justify-center">
+          <span className="inline-flex items-center rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 px-5 py-1.5 text-sm font-bold shadow-sm">
+            Contact
+          </span>
         </div>
       </div>
+
+      {/* Large heading */}
+      <div className="space-y-3">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+          Let&apos;s work together
+        </h2>
+        <p className="text-muted-foreground text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
+          Open to freelance work, full-time roles, and cool side projects.
+          Drop me a message anytime.
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div className="flex items-center gap-4 w-full max-w-xs">
+        <div className="flex-1 h-[1px] bg-border" />
+        <span className="text-xs text-muted-foreground">or find me on</span>
+        <div className="flex-1 h-[1px] bg-border" />
+      </div>
+
+      {/* Social links */}
+      <div className="flex items-center gap-3">
+        {socials.map((s) => (
+          <Link
+            key={s.label}
+            href={s.href}
+            target="_blank"
+            aria-label={s.label}
+            className="inline-flex items-center gap-2 rounded-full border border-zinc-200 dark:border-white/10 px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-zinc-400 dark:hover:border-white/30 transition-colors"
+          >
+            <s.icon size={16} />
+            {s.label}
+          </Link>
+        ))}
+      </div>
+
     </section>
   );
 }
