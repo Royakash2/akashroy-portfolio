@@ -64,7 +64,7 @@ export default function CurrentlyLearning() {
               </div>
 
               {/* Status badge */}
-              <span className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs text-muted-foreground border border-zinc-200 dark:border-white/10 rounded-full px-3 py-1">
+              <span className="shrink-0 inline-flex items-center gap-1.5 text-xs text-muted-foreground border border-zinc-200 dark:border-white/10 rounded-full px-3 py-1">
                 In Progress
               </span>
             </div>

@@ -38,9 +38,9 @@ export default function Contact() {
 
       {/* Divider */}
       <div className="flex items-center gap-4 w-full max-w-xs">
-        <div className="flex-1 h-[1px] bg-border" />
+        <div className="flex-1 h-px bg-border" />
         <span className="text-xs text-muted-foreground">or find me on</span>
-        <div className="flex-1 h-[1px] bg-border" />
+        <div className="flex-1 h-px bg-border" />
       </div>
 
       {/* Social links */}

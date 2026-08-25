@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>
           <div className="max-w-2xl mx-auto py-12 sm:py-24 px-6">
-            <main className="flex flex-col min-h-[100dvh] space-y-10">
+            <main className="flex flex-col min-h-dvh space-y-10">
               {children}
             </main>
           </div>
