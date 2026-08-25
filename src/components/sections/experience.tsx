@@ -8,7 +8,7 @@ export default function Experience() {
       <div className="flex flex-col space-y-6">
         {experience.map((exp) => (
           <div key={exp.id} className="flex gap-4">
-            <div className="mt-1 relative w-10 h-10 flex-shrink-0 overflow-hidden rounded-full border border-border shadow-sm">
+            <div className="mt-1 relative w-10 h-10 shrink-0 overflow-hidden rounded-full border border-border shadow-sm">
               <Image 
                 src={exp.logo || "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=100&h=100&fit=crop"} 
                 alt={exp.company} 

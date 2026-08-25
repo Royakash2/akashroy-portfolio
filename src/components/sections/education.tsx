@@ -8,7 +8,7 @@ export default function Education() {
       <div className="flex flex-col space-y-6">
         {education.map((edu) => (
           <div key={edu.id} className="flex gap-4">
-            <div className="mt-1 relative w-10 h-10 flex-shrink-0 overflow-hidden rounded-full border border-border shadow-sm">
+            <div className="mt-1 relative w-10 h-10 shrink-0 overflow-hidden rounded-full border border-border shadow-sm">
               <Image 
                 src={edu.logo || "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=100&h=100&fit=crop"} 
                 alt={edu.institution} 

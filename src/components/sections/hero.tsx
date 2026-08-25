@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Download } from "lucide-react";
 
 import { personalInfo } from "@/lib/data";
@@ -11,29 +12,30 @@ const BANNER_URL =
 const AVATAR_URL =
   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80";
 
-
-
 export default function Hero() {
   return (
     <section id="hero" className="flex flex-col space-y-5">
       {/* Banner + Avatar */}
       <div className="relative">
         {/* Wide Banner Image */}
-        <div className="w-full h-44 sm:h-52 rounded-2xl overflow-hidden">
-          <img
+        <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden">
+          <Image
             src={BANNER_URL}
             alt="Banner"
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
         </div>
 
         {/* Circular Avatar overlapping the banner */}
         <div className="absolute -bottom-10 left-4">
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-4 ring-background shadow-lg">
-            <img
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-4 ring-background shadow-lg">
+            <Image
               src={AVATAR_URL}
               alt={personalInfo.name}
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
             />
           </div>
         </div>
