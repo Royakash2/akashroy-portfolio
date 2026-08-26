@@ -38,7 +38,7 @@ export default function FloatingNav() {
           </Link>
         ))}
         
-        <div className="w-[1px] h-8 bg-border mx-2"></div>
+        <div className="w-px h-8 bg-border mx-2"></div>
 
         {socialItems.map((item, idx) => (
           <Link
@@ -55,7 +55,7 @@ export default function FloatingNav() {
           </Link>
         ))}
 
-        <div className="w-[1px] h-8 bg-border mx-2"></div>
+        <div className="w-px h-8 bg-border mx-2"></div>
 
         <button
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
