@@ -1,16 +1,23 @@
 import { 
-  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, 
-  SiNodedotjs, SiGraphql, SiPostgresql, SiVercel
+  SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5, SiCss,
+  SiTailwindcss, SiShadcnui, SiNodedotjs, SiExpress, SiMongodb,
+  SiPostgresql, SiGraphql, SiVercel
 } from "react-icons/si";
 
 const skillIcons = [
   { name: "React", icon: SiReact, color: "#61DAFB" },
   { name: "Next.js", icon: SiNextdotjs, color: "currentColor" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { name: "CSS3", icon: SiCss, color: "#1572B6" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "shadcn/ui", icon: SiShadcnui, color: "currentColor" },
   { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-  { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
+  { name: "Express", icon: SiExpress, color: "currentColor" },
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+  { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
   { name: "Vercel", icon: SiVercel, color: "currentColor" },
 ];
 
