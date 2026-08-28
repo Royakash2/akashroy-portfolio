@@ -81,66 +81,18 @@ export const skills = [
 export const experience = [
   {
     id: 1,
-    company: "TechStack Inc.",
-    role: "Senior Frontend Developer",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=100&h=100&fit=crop",
-    location: "San Francisco, CA",
-    period: "Jan 2024 — Present",
-    description:
-      "Lead frontend development for a SaaS platform serving 10k+ users. Architect component libraries, mentor junior developers, and drive adoption of best practices.",
-    highlights: [
-      "Architected a reusable component library used across 3 product teams, reducing development time by 30%",
-      "Migrated legacy jQuery codebase to React/Next.js, improving page load speed by 45%",
-      "Established CI/CD pipelines and code review processes that improved deployment frequency by 60%",
-    ],
-    technologies: ["React", "Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
-  },
-  {
-    id: 2,
-    company: "WebCraft Agency",
-    role: "Full Stack Developer",
-    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop",
+    company: "Cloudoora",
+    role: "Frontend Developer",
+    logo: "/cloudoora.png",
     location: "Remote",
-    period: "Jun 2022 — Dec 2023",
+    period: "Mar 2025 — Oct 2025",
     description:
-      "Built custom web applications for diverse clients across e-commerce, healthcare, and fintech sectors. Delivered end-to-end solutions from design handoff to deployment.",
+      "Worked as a Frontend Developer building the official Cloudoora website using Gatsby and WordPress as a Headless CMS. Also built and customized multiple additional websites using WordPress.",
     highlights: [
-      "Delivered 12+ client projects on time and within budget, with an average NPS score of 9.2",
-      "Built a real-time inventory management system for an e-commerce client handling 50k+ daily orders",
-      "Optimized database queries and implemented caching strategies that cut API response times by 60%",
+      "Architected and built the official Cloudoora website using Gatsby and WordPress Headless CMS",
+      "Developed and delivered multiple client and internal web applications with custom WordPress setups",
     ],
-    technologies: ["React", "Node.js", "Express", "MongoDB", "AWS", "Docker"],
-  },
-  {
-    id: 3,
-    company: "StartupLabs",
-    role: "Junior Developer",
-    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop",
-    location: "New York, NY",
-    period: "Aug 2021 — May 2022",
-    description:
-      "Joined as a junior developer and quickly took ownership of frontend features for an early-stage B2B analytics platform.",
-    highlights: [
-      "Developed interactive data dashboards using React and D3.js for visualizing complex analytics",
-      "Implemented OAuth-based authentication system supporting Google, GitHub, and email/password login",
-      "Wrote unit and integration tests achieving 85% code coverage across the frontend codebase",
-    ],
-    technologies: ["React", "JavaScript", "Python", "Flask", "PostgreSQL"],
-  },
-  {
-    id: 4,
-    company: "Freelance",
-    role: "Web Developer",
-    logo: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=100&h=100&fit=crop",
-    location: "Remote",
-    period: "Jan 2021 — Jul 2021",
-    description:
-      "Took on freelance projects while completing my degree, building websites and web apps for small businesses and non-profits.",
-    highlights: [
-      "Built responsive websites for 5 local businesses using React and Tailwind CSS",
-      "Developed a volunteer management system for a non-profit organization handling 500+ volunteers",
-    ],
-    technologies: ["React", "HTML/CSS", "JavaScript", "Firebase"],
+    technologies: ["Gatsby", "WordPress", "Headless CMS", "React", "GraphQL", "JavaScript", "HTML/CSS"],
   },
 ];
 
