@@ -1,73 +1,79 @@
 "use client";
 
 import Link from "next/link";
-import { Home, Briefcase, Mail, Sun, Moon } from "lucide-react";
-import { TbBrandX, TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
-import { personalInfo } from "@/lib/data";
+import { useState } from "react";
+import { Search, Sun, Moon } from "lucide-react";
 import { useTheme } from "@wrksz/themes/client";
 
-const dockItems = [
-  { icon: Home, href: "/", label: "Home" },
-  { icon: Briefcase, href: "/projects", label: "Projects" },
+const navItems = [
+  { name: "Home", href: "#hero" },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
 ];
 
-const socialItems = [
-  { icon: TbBrandX, href: personalInfo.socials?.twitter || "#", label: "Twitter" },
-  { icon: TbBrandGithub, href: personalInfo.socials?.github || "#", label: "GitHub" },
-  { icon: TbBrandLinkedin, href: personalInfo.socials?.linkedin || "#", label: "LinkedIn" },
-  { icon: Mail, href: `mailto:${personalInfo.email}`, label: "Email" },
-];
-
-export default function FloatingNav() {
+export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [activeItem, setActiveItem] = useState("Home");
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-2 rounded-full border border-border bg-background/80 backdrop-blur-md px-4 py-2 shadow-lg">
-        {dockItems.map((item, idx) => (
-          <Link
-            key={idx}
-            href={item.href}
-            className="p-2 text-muted-foreground hover:bg-muted hover:text-foreground rounded-full transition-colors relative group"
-            aria-label={item.label}
-          >
-            <item.icon size={20} />
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              {item.label}
-            </span>
-          </Link>
-        ))}
-        
-        <div className="w-px h-8 bg-border mx-2"></div>
-
-        {socialItems.map((item, idx) => (
-          <Link
-            key={idx}
-            href={item.href}
-            target="_blank"
-            className="p-2 text-muted-foreground hover:bg-muted hover:text-foreground rounded-full transition-colors relative group"
-            aria-label={item.label}
-          >
-            <item.icon size={20} />
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-              {item.label}
-            </span>
-          </Link>
-        ))}
-
-        <div className="w-px h-8 bg-border mx-2"></div>
-
-        <button
-          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-          className="p-2 text-muted-foreground hover:bg-muted hover:text-foreground rounded-full transition-colors relative group"
-          aria-label="Toggle theme"
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* Left: Serif Logo */}
+        <Link
+          href="/"
+          className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-foreground hover:opacity-90 transition-opacity"
         >
-          {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-            {resolvedTheme === "dark" ? "Light mode" : "Dark mode"}
-          </span>
-        </button>
+          Akash
+        </Link>
+
+        {/* Right Nav Controls */}
+        <div className="flex items-center gap-4 sm:gap-6">
+          {/* Navigation Links */}
+          <nav className="flex items-center gap-4 sm:gap-6 text-sm font-medium">
+            {navItems.map((item) => {
+              const isActive = activeItem === item.name;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setActiveItem(item.name)}
+                  className={`transition-colors relative py-1 ${
+                    isActive
+                      ? "text-foreground font-semibold border-b-2 border-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Icon Buttons */}
+          <div className="flex items-center gap-2">
+            {/* Search Button */}
+            <button
+              onClick={() => {
+                // Focus search or trigger search modal if available
+              }}
+              className="p-2 rounded-full border border-border/60 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Search"
+            >
+              <Search size={16} />
+            </button>
+
+            {/* Theme Toggle Button */}
+            <button
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-full border border-border/60 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle theme"
+            >
+              {resolvedTheme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }

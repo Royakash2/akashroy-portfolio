@@ -1,22 +1,33 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora, Syne, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import FloatingNav from "@/components/navbar";
+import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({
+const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["600", "700", "800"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+
 export const metadata: Metadata = {
-  title: "Akash Sharma | Full Stack Developer",
+  title: "Akash Roy | Full Stack Developer",
   description:
-    "Portfolio of Akash Sharma — a full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+    "Portfolio of Akash Roy — a full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies.",
   openGraph: {
-    title: "Akash Sharma | Full Stack Developer",
+    title: "Akash Roy | Full Stack Developer",
     description:
-      "Portfolio of Akash Sharma — a full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+      "Portfolio of Akash Roy — a full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies.",
     type: "website",
   },
 };
@@ -29,18 +40,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} scroll-smooth`}
+      className={`${sora.variable} ${syne.variable} ${jetbrainsMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      {/* body is full-width so DotBackground can span the entire viewport */}
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>
-          <div className="max-w-2xl mx-auto py-12 sm:py-24 px-6">
-            <main className="flex flex-col min-h-dvh space-y-10">
+          <Navbar />
+          <div className="max-w-3xl mx-auto  px-4 sm:px-6">
+            <main className="flex flex-col min-h-dvh space-y-12 sm:space-y-16">
               {children}
             </main>
           </div>
-          <FloatingNav />
         </ThemeProvider>
       </body>
     </html>
