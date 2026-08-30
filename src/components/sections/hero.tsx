@@ -1,36 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { Search, MapPin, Eye } from "lucide-react";
+import { Download, MapPin, Eye } from "lucide-react";
 import { personalInfo } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 
-// High quality vintage / tech banner image (matching Steve Jobs reference style)
-const BANNER_URL =
-  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+
+// Custom cover image from public directory
+const BANNER_URL = "/cover-image.jpg";
 
 const AVATAR_URL =
   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80";
+
+const heroTitles = [
+  "Full Stack Developer",
+  "Next.js & React Expert",
+  "Open Source Contributor",
+];
 
 export default function Hero() {
   return (
     <section id="hero" className="flex flex-col space-y-6 pt-2">
       {/* Top Banner */}
-      <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden border border-border/40 shadow-sm bg-muted">
+      <div className="relative w-full h-40  rounded-md overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-muted">
         <Image
           src={BANNER_URL}
           alt="Header Banner"
           fill
           priority
-          className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          className="object-cover transition-all duration-700"
         />
       </div>
 
-      {/* Profile Info Row (Matching reference design) */}
+      {/* Profile Info Row */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pt-1">
         {/* Left: Avatar + Title Details */}
         <div className="flex items-center gap-4 sm:gap-5">
-          {/* Avatar Box (Rounded Square like reference image) */}
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-border/80 bg-muted shrink-0 shadow-md">
+          {/* Avatar Box */}
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-md overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-muted shrink-0">
             <Image
               src={AVATAR_URL}
               alt={personalInfo.name}
@@ -40,16 +50,30 @@ export default function Hero() {
           </div>
 
           {/* Name & Role & Location metadata */}
-          <div className="flex flex-col justify-center">
-            {/* Serif Name Header (Matching "Anurag Jha" in image) */}
+          <div className="flex flex-col justify-center min-w-0">
+            {/* Serif Name Header */}
             <h1 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight text-foreground">
               {personalInfo.name}
             </h1>
 
-            {/* Role Subtitle */}
-            <p className="text-xs sm:text-sm font-mono text-muted-foreground mt-0.5">
-              {personalInfo.title}
-            </p>
+            {/* Role Subtitle with Swiper.js Auto-slider */}
+            <div className="h-5 sm:h-6 overflow-hidden mt-0.5 w-64 sm:w-72">
+              <Swiper
+                direction="vertical"
+                modules={[Autoplay]}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                loop={true}
+                className="h-full"
+              >
+                {heroTitles.map((title, idx) => (
+                  <SwiperSlide key={idx} className="flex items-center">
+                    <span className="text-xs sm:text-sm font-mono text-muted-foreground truncate">
+                      {title}
+                    </span>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
             {/* Location & Views metadata */}
             <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground/80 mt-2">
@@ -66,15 +90,16 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Search / Cmd+K Pill Button */}
+        {/* Right: Resume Download Button using shadcn Button (Dark in light mode, Light in dark mode) */}
         <div className="self-start sm:self-end">
-          <button
-            onClick={() => {}}
-            className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-card/60 backdrop-blur-sm px-3.5 py-1.5 text-xs font-mono text-muted-foreground hover:text-foreground hover:border-border transition-colors shadow-sm"
+          <Button
+            size="sm"
+            className="rounded-md bg-foreground text-background hover:bg-foreground/90 font-medium px-4 py-2"
+            render={<a href={personalInfo.resumeUrl} download />}
           >
-            <Search size={13} />
-            <span>⌘K</span>
-          </button>
+            <Download className="size-3.5" />
+            <span>Resume</span>
+          </Button>
         </div>
       </div>
     </section>
