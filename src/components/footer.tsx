@@ -15,28 +15,28 @@ export default function Footer() {
               Made with <Heart size={13} className="text-primary" />
             </span>
             <span className="text-border/60">|</span>
-            <a
+            <Link
               href={personalInfo.socials.github}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"
             >
               GitHub
-            </a>
-            <a
+            </Link>
+            <Link
               href={personalInfo.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"
             >
               LinkedIn
-            </a>
-            <a
+            </Link>
+            <Link
               href={`mailto:${personalInfo.email}`}
               className="hover:text-foreground transition-colors"
             >
               Email
-            </a>
+            </Link>
           </div>
         </div>
       </div>
