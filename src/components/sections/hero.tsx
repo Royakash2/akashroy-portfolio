@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Download, MapPin, Eye } from "lucide-react";
+import { Download, MapPin } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
@@ -10,7 +10,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 // Custom cover image from public directory
-const BANNER_URL = "/cover-image.jpg";
+const BANNER_URL = "/cover-image.jfif";
 
 const AVATAR_URL =
   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80";
@@ -75,16 +75,19 @@ export default function Hero() {
               </Swiper>
             </div>
 
-            {/* Location & Views metadata */}
-            <div className="flex items-center gap-3 text-xs font-mono text-muted-foreground/80 mt-2">
+            {/* Location & Status metadata */}
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted-foreground/80 mt-2">
               <span className="inline-flex items-center gap-1">
                 <MapPin size={12} className="text-muted-foreground" />
                 {personalInfo.location}
               </span>
               <span>•</span>
-              <span className="inline-flex items-center gap-1">
-                <Eye size={12} className="text-muted-foreground" />
-                15,102 views
+              <span className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                {personalInfo.availability || "Available for work"}
               </span>
             </div>
           </div>

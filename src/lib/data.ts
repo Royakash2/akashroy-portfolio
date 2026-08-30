@@ -3,7 +3,7 @@ export const personalInfo = {
   title: "Next.js React MERN Stack Developer",
   email: "akash.sharma@email.com",
   phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
+  location: "Sunamganj, Sylhet, Bangladesh",
   website: "akashsharma.dev",
   availability: "Open to opportunities",
   shortBio:
