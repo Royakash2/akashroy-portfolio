@@ -14,7 +14,7 @@ export const personalInfo = {
   currentCompany: "",
   currentCompanyLogo: "",
   socials: {
-    github: "https://github.com/akashsharma",
+    github: "https://github.com/Royakash2",
     linkedin: "https://linkedin.com/in/akashsharma",
     twitter: "https://twitter.com/akashsharma",
   },
