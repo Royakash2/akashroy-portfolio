@@ -93,10 +93,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Resume Download Button using shadcn Button (Dark in light mode, Light in dark mode) */}
+        {/* Right: Resume Download Button */}
         <div className="self-start sm:self-end">
           <Button
             size="sm"
+            nativeButton={false}
             className="rounded-md bg-foreground text-background hover:bg-foreground/90 font-medium px-4 py-2"
             render={<a href={personalInfo.resumeUrl} download />}
           >
