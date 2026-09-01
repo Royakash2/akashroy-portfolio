@@ -8,7 +8,7 @@ const githubUsername = personalInfo.socials.github.split("/").pop() || "Royakash
 
 export default function GithubActivity() {
   return (
-    <section id="github-activity" className="flex flex-col space-y-4">
+    <section  id="github-activity" className="flex flex-col space-y-4">
       {/* Header Row (Matching image design) */}
       <div className="flex items-center justify-between">
         <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight text-foreground">
@@ -27,7 +27,7 @@ export default function GithubActivity() {
 
       {/* Contribution Calendar Container */}
       <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/40 p-5 sm:p-6 shadow-sm flex items-center justify-center overflow-x-auto">
-        <div className="w-full flex justify-center min-w-[650px] sm:min-w-0 font-mono text-xs text-muted-foreground">
+        <div className="w-full flex justify-center min-w-162.5 sm:min-w-0 font-mono text-xs text-muted-foreground">
           <GitHubCalendar
             username={githubUsername}
             blockSize={12}
