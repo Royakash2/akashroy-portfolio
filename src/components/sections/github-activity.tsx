@@ -1,14 +1,19 @@
 "use client";
 
-import { GitHubCalendar } from "react-github-calendar";
+import dynamic from "next/dynamic";
 import { ExternalLink } from "lucide-react";
 import { personalInfo } from "@/lib/data";
+
+const GitHubCalendar = dynamic(
+  () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
+  { ssr: false }
+);
 
 const githubUsername = personalInfo.socials.github.split("/").pop() || "Royakash2";
 
 export default function GithubActivity() {
   return (
-    <section  id="github-activity" className="flex flex-col space-y-4">
+    <section id="github-activity" className="flex flex-col space-y-4">
       {/* Header Row (Matching image design) */}
       <div className="flex items-center justify-between">
         <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight text-foreground">
