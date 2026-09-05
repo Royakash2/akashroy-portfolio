@@ -14,8 +14,8 @@ export default function Projects() {
   return (
     <section id="projects" className="py-12 flex flex-col space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 border-b border-border/40 pb-6">
-        <h2 className="text-4xl sm:text-5xl font-serif text-[#1e3a8a] dark:text-[#93c5fd] tracking-tight">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 pb-6">
+        <h2 className="text-xl font-bold tracking-tight">
           Projects
         </h2>
         <div className="flex items-center p-1 bg-muted/40 rounded-lg border border-border/60">
