@@ -9,6 +9,7 @@ import { TbBrandGithub } from "react-icons/tb";
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
+  const [expandedProject, setExpandedProject] = useState<number | null>(null);
   const filters = ["All", "Frontend", "Backend", "Fullstack"];
 
   return (
@@ -91,11 +92,37 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <button className="text-xs text-muted-foreground hover:text-foreground font-medium flex items-center gap-1 mb-5 transition-colors w-fit">
-                Show engineering details <ChevronDown size={14} />
+              <button 
+                onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
+                className={`text-xs font-mono font-medium flex items-center gap-1 mb-3 transition-colors w-fit ${
+                  expandedProject === project.id ? "text-muted-foreground" : "text-foreground hover:text-foreground/70"
+                }`}
+              >
+                {expandedProject === project.id ? "Hide engineering details" : "Show engineering details"}
+                <ChevronDown 
+                  size={14} 
+                  className={`transition-transform duration-200 ${expandedProject === project.id ? "rotate-180" : ""}`}
+                />
               </button>
 
-              <hr className="border-border/60 mb-5" />
+              <div 
+                className={`grid transition-all duration-300 ease-in-out ${
+                  expandedProject === project.id ? "grid-rows-[1fr] opacity-100 mb-5" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="p-4 rounded-xl border border-border bg-card text-sm text-muted-foreground space-y-3 leading-relaxed mt-1">
+                    <p>
+                      The frontend is built with React's compositional model, styled atomically with Tailwind CSS, and powered by Zustand for predictable, lean state management. Icons from lucide-react keep the UI crisp and accessible. The result: a minimal surface area with a maximal creative ceiling.
+                    </p>
+                    <p>
+                      * Designed for speed • Engineered for feel. *
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="border-border/60 mb-5 mt-auto" />
 
               <div className="flex items-end justify-between mt-auto gap-4">
                 <div className="flex flex-wrap gap-2 flex-1">
