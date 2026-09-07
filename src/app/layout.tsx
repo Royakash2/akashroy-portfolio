@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Sora, Syne, JetBrains_Mono } from "next/font/google";
+import { Sora, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/shared/ThemeProvider";
 
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["600", "700", "800"],
-});
-
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -40,17 +41,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${syne.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${sora.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-background font-sans antialiased">
+      <body
+        className="min-h-screen antialiased"
+        suppressHydrationWarning
+        style={{
+          fontFamily: "var(--font-sans)",
+          backgroundColor: "var(--bg)",
+          color: "var(--fg)",
+        }}
+      >
         <ThemeProvider>
-          <Navbar />
-          <div className="max-w-3xl mx-auto  px-4 sm:px-6">
-            <main className="flex flex-col min-h-dvh space-y-12 sm:space-y-16">
-              {children}
-            </main>
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

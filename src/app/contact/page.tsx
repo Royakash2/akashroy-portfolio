@@ -1,8 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { Shell, SectionHeader } from "@/components/layout/Shell";
 import { Reveal } from "@/components/shared/Reveal";
+import { LayoutWrapper } from "@/components/shared/LayoutWrapper";
 import { site } from "@/config/site";
 import { Separator } from "@/components/ui/separator";
 import { TbBrandGithub, TbBrandLinkedin, TbBrandX } from "react-icons/tb";
@@ -15,13 +14,13 @@ const socials = [
   { icon: Mail, href: site.socials.email, label: "Email" },
 ];
 
-export function Contact() {
+export default function ContactPage() {
   return (
-    <>
-      <SectionHeader title="Contact" id="contact" />
+    <LayoutWrapper>
+      <SectionHeader title="Contact" />
       <Shell className="px-6 py-6 sm:px-8">
         <Reveal>
-          <div className="flex flex-col items-center text-center space-y-8 pb-12">
+          <div className="flex flex-col items-center text-center space-y-8 pb-24">
             {/* Large heading */}
             <div className="space-y-3">
               <h2
@@ -71,9 +70,30 @@ export function Contact() {
                 </Link>
               ))}
             </div>
+
+            {/* Status */}
+            <div
+              className="mt-8 p-4 rounded-xl max-w-sm"
+              style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
+            >
+              <p
+                className="text-[11px] mb-2"
+                style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
+              >
+                CURRENT STATUS
+              </p>
+              <p
+                className="text-[12px]"
+                style={{ fontFamily: "var(--font-mono)", color: "var(--fg)" }}
+              >
+                {site.status.available
+                  ? `✅ ${site.status.availableText}`
+                  : "❌ Not available"}
+              </p>
+            </div>
           </div>
         </Reveal>
       </Shell>
-    </>
+    </LayoutWrapper>
   );
 }
