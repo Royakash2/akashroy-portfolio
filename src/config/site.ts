@@ -48,7 +48,11 @@ export const site = {
     author: "Cory House",
   },
   profileImages: [
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    "/eren-jaeger.jpg",
+    "/NEYMAR-JR.jfif",
+    "/neymar-jr-t.jfif",
+    "/Attack-on-Titan.jfif",
+    "/Eren-yeager-freedom.jfif",
   ],
   bannerImage: "/cover-image.jfif",
   initials: "AR",
