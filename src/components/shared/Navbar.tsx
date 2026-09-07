@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { site } from "@/config/site";
-import { useTheme } from "./ThemeProvider";
-import { Sun, Moon, Search, Menu, X } from "lucide-react";
+import { ThemeToggle, ThemeToggleMobile } from "./ThemeToggle";
+import { Search, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -19,8 +19,6 @@ export function Navbar({
 }: {
   onOpenPalette?: () => void;
 }) {
-  const { theme, toggleTheme } = useTheme();
-  const dark = theme === "dark";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -71,15 +69,10 @@ export function Navbar({
             </button>
           )}
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
+          <ThemeToggle
             className="grid size-7 place-items-center rounded-full transition-all duration-300 hover:rotate-45 hover:opacity-100 cursor-pointer"
             style={{ border: "1px solid var(--line)", color: "var(--muted)" }}
-          >
-            {dark ? <Sun className="size-3.5" /> : <Moon className="size-3.5" />}
-          </button>
+          />
         </nav>
 
         {/* Mobile Navigation Trigger */}
@@ -96,15 +89,10 @@ export function Navbar({
             </button>
           )}
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
+          <ThemeToggleMobile
             className="grid size-8 place-items-center rounded-full cursor-pointer"
             style={{ border: "1px solid var(--line)", color: "var(--muted)" }}
-          >
-            {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
-          </button>
+          />
 
           <button
             type="button"

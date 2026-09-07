@@ -6,11 +6,6 @@ import {
   useTheme as useNextThemesTheme,
 } from "next-themes";
 
-/**
- * Standard shadcn/ui theme provider backed by next-themes.
- * Toggles the `dark` class on <html> — your CSS variables react to it,
- * so the design is unchanged. Keeps a `toggleTheme` helper for consumers.
- */
 export function useTheme() {
   const { theme, setTheme } = useNextThemesTheme();
   const resolved = theme ?? "dark";
@@ -27,6 +22,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       defaultTheme="dark"
       enableSystem={false}
       disableTransitionOnChange
+      scriptProps={{ type: "application/json" }}
     >
       {children}
     </NextThemesProvider>
