@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "@/config/site";
+import Image from "next/image";
 import { Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 
 export function ProjectCard({
   project: p,
-  index = 0,
 }: {
   project: Project;
   index?: number;
@@ -36,23 +36,23 @@ export function ProjectCard({
           {/* Viewfinder Reticles (Camera REC / ISO) */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
             {/* Corner brackets */}
-            <div className="absolute top-2.5 left-2.5 w-2.5 h-2.5 border-t border-l" style={{ borderColor: "rgba(255,255,255,0.7)" }} />
-            <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 border-t border-r" style={{ borderColor: "rgba(255,255,255,0.7)" }} />
-            <div className="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 border-b border-l" style={{ borderColor: "rgba(255,255,255,0.7)" }} />
-            <div className="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 border-b border-r" style={{ borderColor: "rgba(255,255,255,0.7)" }} />
+            <div className="absolute top-2.5 left-2.5 w-2.5 h-2.5 border-t border-l opacity-70" style={{ borderColor: "var(--fg)" }} />
+            <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 border-t border-r opacity-70" style={{ borderColor: "var(--fg)" }} />
+            <div className="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 border-b border-l opacity-70" style={{ borderColor: "var(--fg)" }} />
+            <div className="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 border-b border-r opacity-70" style={{ borderColor: "var(--fg)" }} />
 
             {/* REC indicator */}
             <div
-              className="absolute top-2.5 left-7 flex items-center gap-1 text-[8px] font-semibold"
-              style={{ fontFamily: "var(--font-mono)", color: "rgba(255,255,255,0.8)" }}
+              className="absolute top-2.5 left-7 flex items-center gap-1 text-[8px] font-semibold opacity-80"
+              style={{ fontFamily: "var(--font-mono)", color: "var(--fg)" }}
             >
               <span className="size-1.5 rounded-full bg-rose-500 animate-pulse" /> REC
             </div>
 
             {/* ISO indicator */}
             <div
-              className="absolute top-2.5 right-7 text-[8px] font-semibold"
-              style={{ fontFamily: "var(--font-mono)", color: "rgba(255,255,255,0.8)" }}
+              className="absolute top-2.5 right-7 text-[8px] font-semibold opacity-80"
+              style={{ fontFamily: "var(--font-mono)", color: "var(--fg)" }}
             >
               ISO 400
             </div>
@@ -113,10 +113,12 @@ export function ProjectCard({
               className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-lg shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none"
               style={{ border: "4px solid color-mix(in srgb, var(--bg) 40%, transparent)" }}
             >
-              <img
+              <Image
                 src={p.image}
                 alt={`${p.title} preview`}
-                className="w-full h-full object-cover object-top"
+                fill
+                sizes="(max-width: 640px) 224px, 288px"
+                className="object-cover object-top"
                 onError={() => setImgError(true)}
               />
             </div>

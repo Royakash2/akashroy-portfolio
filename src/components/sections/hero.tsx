@@ -129,7 +129,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
               >
                 {site.name}
               </h1>
-              <div className="h-[20px] overflow-hidden mt-1">
+              <div className="h-5 overflow-hidden mt-1">
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={headlineIndex}
