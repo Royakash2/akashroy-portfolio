@@ -3,7 +3,6 @@
 import { Shell, SectionHeader, GapBand } from "@/components/layout/Shell";
 import { Reveal } from "@/components/shared/Reveal";
 import { site } from "@/config/site";
-import { useTheme } from "@/components/shared/ThemeProvider";
 import {
   SiReact,
   SiNextdotjs,
@@ -11,7 +10,6 @@ import {
   SiTypescript,
   SiJavascript,
   SiHtml5,
-  SiCss,
   SiTailwindcss,
   SiShadcnui,
   SiNodedotjs,
@@ -51,9 +49,6 @@ const skillIcons: Record<
 };
 
 export function Skills() {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
-
   return (
     <>
       <SectionHeader title="Skills" id="skills" />
@@ -75,8 +70,12 @@ export function Skills() {
                   }}
                 >
                   <Icon
-                    className="text-sm"
-                    style={{ color: isDark ? skillData.darkColor : skillData.lightColor }}
+                    className="text-sm dark:hidden"
+                    style={{ color: skillData.lightColor }}
+                  />
+                  <Icon
+                    className="text-sm hidden dark:block"
+                    style={{ color: skillData.darkColor }}
                   />
                   <span>{skill}</span>
                 </div>
