@@ -11,7 +11,7 @@ export function Shell({
 }) {
   return (
     <div
-      className={`relative mx-auto w-full max-w-[760px] ${className}`}
+      className={`relative mx-auto w-full max-w-190 ${className}`}
       style={{
         borderLeft: "1px dashed var(--line)",
         borderRight: "1px dashed var(--line)",
@@ -33,27 +33,29 @@ export function SectionHeader({
   id?: string;
 }) {
   return (
-    <div
-      id={id}
-      className="relative w-full bg-stripes"
-      style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}
-    >
-      <Shell style={{ background: "var(--bg)" }}>
-        {/* Crosshair Dot Anchors */}
+    <div id={id} className="relative w-full bg-(--bg)">
+      <Shell
+        style={{
+          background: "var(--bg)",
+          borderTop: "1px solid var(--line)",
+          borderBottom: "1px solid var(--line)",
+        }}
+      >
+        {/* Crosshair Dot Anchors (inside container corners) */}
         <span
-          className="absolute top-0 left-0 h-[3px] w-[3px] -translate-x-1/2 -translate-y-1/2 opacity-40 z-20"
+          className="absolute top-0 left-0 h-0.75 w-0.75 -translate-x-1/2 -translate-y-1/2 opacity-40 z-20"
           style={{ background: "var(--fg)" }}
         />
         <span
-          className="absolute top-0 right-0 h-[3px] w-[3px] translate-x-1/2 -translate-y-1/2 opacity-40 z-20"
+          className="absolute top-0 right-0 h-0.75 w-0.75 translate-x-1/2 -translate-y-1/2 opacity-40 z-20"
           style={{ background: "var(--fg)" }}
         />
         <span
-          className="absolute bottom-0 left-0 h-[3px] w-[3px] -translate-x-1/2 translate-y-1/2 opacity-40 z-20"
+          className="absolute bottom-0 left-0 h-0.75 w-0.75 -translate-x-1/2 translate-y-1/2 opacity-40 z-20"
           style={{ background: "var(--fg)" }}
         />
         <span
-          className="absolute bottom-0 right-0 h-[3px] w-[3px] translate-x-1/2 translate-y-1/2 opacity-40 z-20"
+          className="absolute bottom-0 right-0 h-0.75 w-0.75 translate-x-1/2 translate-y-1/2 opacity-40 z-20"
           style={{ background: "var(--fg)" }}
         />
 
@@ -79,7 +81,7 @@ export function GapBand({
   className?: string;
 }) {
   return (
-    <div className={`relative w-full bg-stripes ${h} ${className}`}>
+    <div className={`relative w-full bg-(--bg) ${h} ${className}`}>
       <Shell className="h-full" style={{ background: "var(--bg)" }} />
     </div>
   );
