@@ -18,8 +18,7 @@ export function ProjectCard({
 
   return (
     <div
-      className="group flex flex-col justify-between rounded-xl p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md h-full"
-      style={{ border: "1px solid var(--line)", background: "var(--card)" }}
+      className="group flex flex-col justify-between rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 h-full border bg-card hover:border- hover:border-accent-foreground"
     >
       <div>
         {/* Angled Screenshot Preview Canvas Box */}
@@ -179,7 +178,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${p.title} live site`}
-              className="transition-all duration-200 hover:-translate-y-0.5 hover:opacity-100"
+              className="text-(--soft) hover:text-(--fg) transition-all duration-200 hover:-translate-y-0.5"
             >
               <Globe className="size-4" />
             </a>
@@ -190,7 +189,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${p.title} repository`}
-              className="transition-all duration-200 hover:-translate-y-0.5 hover:opacity-100"
+              className="text-(--soft) hover:text-(--fg) transition-all duration-200 hover:-translate-y-0.5"
             >
               <GitHubIcon className="size-4" />
             </a>
