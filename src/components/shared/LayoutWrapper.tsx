@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Neko } from "neko-ts";
-import { earth } from "neko-ts/breeds";
+import { moka } from "neko-ts/breeds";
 import { Navbar } from "./Navbar";
 import { CommandPalette } from "./CommandPalette";
 import { SideIndex } from "./SideIndex";
@@ -25,7 +25,7 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
 
 
   useEffect(() => {
-    const neko = new Neko({ breed: earth });
+    const neko = new Neko({ breed: moka, speed: 10, animationSpeed: 180 });
     return () => neko.destroy();
   }, []);
 
