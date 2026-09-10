@@ -58,54 +58,6 @@ export function ProjectCard({
             </div>
           </div>
 
-          {/* Top Badges Row */}
-          <div className="relative z-20 flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              {p.status ? (
-                <span
-                  className="rounded px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider backdrop-blur-md"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    background: "rgba(245, 158, 11, 0.2)",
-                    border: "1px solid rgba(245, 158, 11, 0.4)",
-                    color: "#fcd34d",
-                  }}
-                >
-                  • {p.status}
-                </span>
-              ) : (
-                <span
-                  className="rounded px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider backdrop-blur-md flex items-center gap-1"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    background: "rgba(16, 185, 129, 0.2)",
-                    border: "1px solid rgba(16, 185, 129, 0.4)",
-                    color: "#6ee7b7",
-                  }}
-                >
-                  <span className="relative flex size-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                    <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
-                  </span>
-                  Live
-                </span>
-              )}
-            </div>
-
-            {p.featured && (
-              <span
-                className="rounded px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider"
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  background: "rgba(245, 158, 11, 0.1)",
-                  border: "1px solid rgba(245, 158, 11, 0.3)",
-                  color: "#f59e0b",
-                }}
-              >
-                Featured
-              </span>
-            )}
-          </div>
 
           {/* Angled Screenshot Image */}
           {p.image && !imgError ? (
