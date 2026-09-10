@@ -57,7 +57,7 @@ export default function ContactPage() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-[12px] transition-all duration-300 hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-sm px-4 py-2 text-[12px] transition-all duration-300 hover:opacity-80"
                   style={{
                     fontFamily: "var(--font-mono)",
                     color: "var(--muted)",
@@ -65,15 +65,15 @@ export default function ContactPage() {
                     background: "var(--chip)",
                   }}
                 >
-                  <s.icon size={15} />
-                  {s.label}
+                  <s.icon size={14} />
+                  <span>{s.label}</span>
                 </Link>
               ))}
             </div>
 
             {/* Status */}
             <div
-              className="mt-8 p-4 rounded-xl max-w-sm"
+              className="mt-8 p-4 rounded-sm max-w-sm"
               style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
             >
               <p

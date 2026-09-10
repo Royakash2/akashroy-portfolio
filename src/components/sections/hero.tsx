@@ -35,7 +35,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
       {/* Cover Banner */}
       <Shell className="px-2 pt-2 sm:px-3 sm:pt-3">
         <div
-          className="relative h-36 overflow-hidden rounded-xl sm:h-44"
+          className="relative h-36 overflow-hidden rounded-sm sm:h-44"
           style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
         >
           <Image
@@ -81,7 +81,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
             {/* Avatar */}
             <div
               onClick={handleNextImage}
-              className="relative grid size-20 shrink-0 place-items-center overflow-hidden rounded-xl shadow-md group cursor-pointer select-none animate-fade-up"
+              className="relative grid size-20 shrink-0 place-items-center overflow-hidden rounded-sm shadow-md group cursor-pointer select-none animate-fade-up"
               style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
               title="Click to change profile image"
             >
@@ -94,7 +94,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
 
               {/* CRT scanline overlay */}
               <div
-                className="absolute inset-0 pointer-events-none rounded-xl overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity"
+                className="absolute inset-0 pointer-events-none rounded-sm overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity"
                 style={{
                   backgroundImage:
                     "linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%)",
@@ -167,7 +167,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
           {onOpenPalette && (
             <button
               onClick={onOpenPalette}
-              className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-[11px] transition-all duration-300 shadow-sm cursor-pointer hover:opacity-80"
+              className="flex items-center gap-2 rounded-sm px-3 py-1.5 text-[11px] transition-all duration-300 shadow-sm cursor-pointer hover:opacity-80"
               style={{
                 border: "1px solid var(--line)",
                 background: "var(--chip)",

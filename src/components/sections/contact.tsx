@@ -58,7 +58,7 @@ export function Contact() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-[12px] transition-all duration-300 hover:opacity-80"
+                  className="inline-flex items-center gap-2 rounded-sm px-4 py-2 text-[12px] transition-all duration-300 hover:opacity-80"
                   style={{
                     fontFamily: "var(--font-mono)",
                     color: "var(--muted)",

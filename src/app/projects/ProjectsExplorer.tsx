@@ -37,7 +37,7 @@ export function ProjectsExplorer() {
         title="Projects"
         aside={
           <div
-            className="flex gap-1 rounded-lg p-0.5"
+            className="flex gap-1 rounded-sm p-0.5"
             style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
           >
             {["All", "Frontend", "Backend", "Fullstack"].map((tab) => (
@@ -45,7 +45,7 @@ export function ProjectsExplorer() {
                 key={tab}
                 type="button"
                 onClick={() => setProjectTab(tab)}
-                className="flex items-center justify-center text-center rounded-md px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer"
+                className="flex items-center justify-center text-center rounded-sm px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer"
                 style={{
                   background: projectTab === tab ? "var(--fg)" : "transparent",
                   color: projectTab === tab ? "var(--bg)" : "var(--muted)",
@@ -69,7 +69,7 @@ export function ProjectsExplorer() {
                 placeholder="Search projects, technologies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-lg py-2 pl-9 pr-4 text-[12px] md:text-[12px] focus-visible:ring-0 transition-all"
+                className="w-full rounded-sm py-2 pl-9 pr-4 text-[12px] md:text-[12px] focus-visible:ring-0 transition-all"
                 style={{
                   border: "1px solid var(--line)",
                   background: "var(--chip)",

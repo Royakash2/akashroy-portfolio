@@ -26,7 +26,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
         aside={
           !isSearchable ? (
             <div
-              className="flex gap-1 rounded-lg p-0.5"
+              className="flex gap-1 rounded-sm p-0.5"
               style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
             >
               {["All", "Frontend", "Backend", "Fullstack"].map((tab) => (
@@ -34,7 +34,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
                   key={tab}
                   type="button"
                   onClick={() => setProjectTab(tab)}
-                  className="flex items-center justify-center text-center rounded-md px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer"
+                  className="flex items-center justify-center text-center rounded-sm px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer"
                   style={{
                     background: projectTab === tab ? "var(--fg)" : "transparent",
                     color: projectTab === tab ? "var(--bg)" : "var(--muted)",

@@ -6,6 +6,8 @@ import type { Project } from "@/config/site";
 import Image from "next/image";
 import { Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export function ProjectCard({
   project: p,
@@ -17,13 +19,13 @@ export function ProjectCard({
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div
-      className="group flex flex-col justify-between rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 h-full border bg-card hover:border- hover:border-accent-foreground"
+    <Card
+      className="group flex flex-col justify-between rounded-sm p-5 transition-all duration-300 hover:-translate-y-1 h-full border border-(--line) hover:border-(--fg) bg-card text-inherit shadow-none ring-0 gap-0"
     >
       <div>
         {/* Angled Screenshot Preview Canvas Box */}
         <div
-          className="relative mb-4 h-48 w-full overflow-hidden rounded-lg p-3 flex flex-col justify-between"
+          className="relative mb-4 h-48 w-full overflow-hidden rounded-sm p-3 flex flex-col justify-between"
           style={{
             border: "1px solid var(--line)",
             background: "linear-gradient(135deg, var(--chip), var(--card), color-mix(in srgb, var(--bg) 40%, transparent))",
@@ -57,11 +59,10 @@ export function ProjectCard({
             </div>
           </div>
 
-
           {/* Angled Screenshot Image */}
           {p.image && !imgError ? (
             <div
-              className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-lg shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none"
+              className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-sm shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none"
               style={{ border: "4px solid color-mix(in srgb, var(--bg) 40%, transparent)" }}
             >
               <Image
@@ -128,7 +129,7 @@ export function ProjectCard({
                   className="overflow-hidden"
                 >
                   <div
-                    className="mt-2.5 rounded-lg p-3 text-[12px] leading-relaxed space-y-1.5"
+                    className="mt-2.5 rounded-sm p-3 text-[12px] leading-relaxed space-y-1.5"
                     style={{
                       border: "1px solid color-mix(in srgb, var(--line) 50%, transparent)",
                       borderLeft: "2px solid var(--soft)",
@@ -154,18 +155,16 @@ export function ProjectCard({
       >
         <div className="flex flex-wrap gap-1.5">
           {p.stack.map((t) => (
-            <span
+            <Badge
               key={t}
-              className="rounded px-2 py-0.5 text-[10.5px]"
+              variant="outline"
+              className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal border-none bg-(--chip) text-(--muted) hover:bg-(--chip)"
               style={{
-                fontFamily: "var(--font-mono)",
-                background: "var(--chip)",
-                color: "var(--muted)",
                 border: "1px solid color-mix(in srgb, var(--line) 30%, transparent)",
               }}
             >
               {t}
-            </span>
+            </Badge>
           ))}
         </div>
         <div
@@ -196,6 +195,6 @@ export function ProjectCard({
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

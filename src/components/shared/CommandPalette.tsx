@@ -177,7 +177,7 @@ export function CommandPalette({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-2xl shadow-2xl backdrop-blur-xl max-h-[60vh] z-10"
+            className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-sm shadow-2xl backdrop-blur-xl max-h-[60vh] z-10"
             style={{
               border: "1px solid rgba(255,255,255,0.08)",
               backgroundColor: "rgba(18, 18, 18, 0.95)",
@@ -197,7 +197,7 @@ export function CommandPalette({
                 style={{ color: "#f5f5f4" }}
               />
               <kbd
-                className="hidden sm:inline-block rounded-md px-1.5 py-0.5 text-[10px]"
+                className="hidden sm:inline-block rounded-sm px-1.5 py-0.5 text-[10px]"
                 style={{
                   border: "1px solid rgba(255,255,255,0.1)",
                   backgroundColor: "rgba(255,255,255,0.05)",
@@ -239,7 +239,7 @@ export function CommandPalette({
                             data-active={isActive}
                             onClick={item.action}
                             onMouseEnter={() => setSelectedIndex(itemIndex)}
-                            className="flex items-center gap-3.5 rounded-xl px-3.5 py-2.5 text-left w-full transition-all duration-150"
+                            className="flex items-center gap-3.5 rounded-sm px-3.5 py-2.5 text-left w-full transition-all duration-150"
                             style={{
                               border: isActive ? "1px solid rgba(255,255,255,0.1)" : "1px solid transparent",
                               backgroundColor: isActive ? "rgba(255,255,255,0.08)" : "transparent",

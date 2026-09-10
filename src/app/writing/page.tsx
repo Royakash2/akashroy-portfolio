@@ -17,7 +17,7 @@ export default function WritingPage() {
                 key={idx}
                 href={post.url}
                 target="_blank"
-                className="group flex flex-col gap-2 p-4 rounded-xl transition-all duration-300 hover:shadow-lg"
+                className="group flex flex-col gap-2 p-4 rounded-sm transition-all duration-300 hover:shadow-lg"
                 style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
               >
                 <div className="flex items-center justify-between gap-2">

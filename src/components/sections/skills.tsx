@@ -128,7 +128,7 @@ export function Skills() {
         {/* Category Tabs — shadcn Tabs component */}
         <Tabs value={activeCategory} onValueChange={setActiveCategory}>
           <TabsList
-            className="h-auto w-full flex-wrap justify-start gap-1.5 rounded-lg border border-(--line) bg-(--chip) p-1"
+            className="h-auto w-full flex-wrap justify-start gap-1.5 rounded-sm border border-(--line) bg-(--chip) p-1"
           >
             {categories.map((cat) => {
               const TabIcon = CATEGORY_ICONS[cat] ?? Layers;
@@ -136,7 +136,7 @@ export function Skills() {
                 <TabsTrigger
                   key={cat}
                   value={cat}
-                  className="cursor-pointer h-auto rounded-md px-3 py-1.5 text-[12px] font-medium
+                  className="cursor-pointer h-auto rounded-sm px-3 py-1.5 text-[12px] font-medium
                     text-(--muted) hover:bg-(--hover) hover:text-(--fg)
                     data-active:bg-(--fg) data-active:font-semibold data-active:text-(--bg) data-active:shadow-sm
                     data-active:hover:bg-(--fg) data-active:hover:text-(--bg)"
@@ -166,7 +166,7 @@ export function Skills() {
                         variant="outline"
                         onMouseEnter={() => setHoveredSkill(skill)}
                         onMouseLeave={() => setHoveredSkill(null)}
-                        className="flex h-auto w-auto cursor-default items-center gap-2 rounded-md border-(--line) bg-card px-3 py-1.5 font-mono text-[12px] font-normal text-(--muted) shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg)"
+                        className="flex h-auto w-auto cursor-default items-center gap-2 rounded-sm border-(--line) bg-card px-3 py-1.5 font-mono text-[12px] font-normal text-(--muted) shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg)"
                       >
                         <SkillIcon skill={skill} hovered={hoveredSkill === skill} />
                         <span>{skill}</span>
