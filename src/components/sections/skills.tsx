@@ -9,11 +9,12 @@ import { site } from "@/config/site";
 import type { ComponentType, CSSProperties } from "react";
 import {
   Layers,
-  Code,
   PanelsTopLeft,
   Server,
-  Database,
-  Terminal,
+  Wrench,
+  Sparkles,
+  Orbit,
+  Webhook,
   Cpu,
 } from "lucide-react";
 import {
@@ -22,6 +23,8 @@ import {
   SiGatsby,
   SiTypescript,
   SiJavascript,
+  SiHtml5,
+  SiCss,
   SiTailwindcss,
   SiShadcnui,
   SiNodedotjs,
@@ -34,17 +37,18 @@ import {
   SiVercel,
   SiGit,
   SiFigma,
+  SiPostman,
+  SiNpm,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 type IconType = ComponentType<{ className?: string; style?: CSSProperties }>;
 
 const CATEGORY_ICONS: Record<string, IconType> = {
   All: Layers,
-  Languages: Code,
   Frontend: PanelsTopLeft,
   Backend: Server,
-  Databases: Database,
-  Tools: Terminal,
+  Tools: Wrench,
 };
 
 const skillIcons: Record<string, { icon: IconType; darkColor?: string; lightColor?: string }> = {
@@ -53,6 +57,8 @@ const skillIcons: Record<string, { icon: IconType; darkColor?: string; lightColo
   Gatsby: { icon: SiGatsby, darkColor: "#663399", lightColor: "#663399" },
   TypeScript: { icon: SiTypescript, darkColor: "#3178C6", lightColor: "#3178C6" },
   JavaScript: { icon: SiJavascript, darkColor: "#F7DF1E", lightColor: "#b89900" },
+  HTML: { icon: SiHtml5, darkColor: "#E34F26", lightColor: "#E34F26" },
+  CSS: { icon: SiCss, darkColor: "#1572B6", lightColor: "#1572B6" },
   "Tailwind CSS": { icon: SiTailwindcss, darkColor: "#06B6D4", lightColor: "#0891b2" },
   "shadcn/ui": { icon: SiShadcnui, darkColor: "#ffffff", lightColor: "#18181b" },
   "Node.js": { icon: SiNodedotjs, darkColor: "#339933", lightColor: "#2d7a2d" },
@@ -65,11 +71,12 @@ const skillIcons: Record<string, { icon: IconType; darkColor?: string; lightColo
   Git: { icon: SiGit, darkColor: "#F05032", lightColor: "#F05032" },
   Vercel: { icon: SiVercel, darkColor: "#ffffff", lightColor: "#000000" },
   Figma: { icon: SiFigma, darkColor: "#F24E1E", lightColor: "#F24E1E" },
-  "VS Code": { icon: Cpu },
-  Cursor: { icon: Cpu },
-  Antigravity: { icon: Cpu },
-  // Neutral / lucide-style icon — inherits the chip color.
-  "REST APIs": { icon: Cpu },
+  "VS Code": { icon: VscVscode, darkColor: "#007ACC", lightColor: "#007ACC" },
+  Cursor: { icon: Sparkles, darkColor: "#ffffff", lightColor: "#18181b" },
+  Antigravity: { icon: Orbit, darkColor: "#a78bfa", lightColor: "#7c3aed" },
+  "REST APIs": { icon: Webhook, darkColor: "#38bdf8", lightColor: "#0284c7" },
+  Postman: { icon: SiPostman, darkColor: "#FF6C37", lightColor: "#FF6C37" },
+  npm: { icon: SiNpm, darkColor: "#CB3837", lightColor: "#CB3837" },
 };
 
 function SkillIcon({ skill, hovered }: { skill: string; hovered?: boolean }) {

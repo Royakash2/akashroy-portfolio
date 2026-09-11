@@ -158,9 +158,10 @@ export function ProjectCard({
             <Badge
               key={t}
               variant="outline"
-              className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal border-none bg-(--chip) text-(--muted) hover:bg-(--chip)"
+              className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal text-(--muted)"
               style={{
-                border: "1px solid color-mix(in srgb, var(--line) 30%, transparent)",
+                background: "color-mix(in srgb, var(--fg) 8%, transparent)",
+                border: "1px solid color-mix(in srgb, var(--fg) 12%, transparent)",
               }}
             >
               {t}
