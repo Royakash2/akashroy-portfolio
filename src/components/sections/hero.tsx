@@ -5,7 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shell } from "@/components/layout/Shell";
 import { site } from "@/config/site";
-import { MapPin, Search, RotateCw } from "lucide-react";
+import { MapPin, Download, RotateCw } from "lucide-react";
+import { OutlineButton } from "@/components/ui/OutlineButton";
 
 const HEADLINE_TITLES = [
   "Full Stack Developer",
@@ -14,7 +15,7 @@ const HEADLINE_TITLES = [
   "Clean Code Advocate",
 ];
 
-export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
+export function Hero() {
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -145,41 +146,19 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
                 </AnimatePresence>
               </div>
               <p
-                className="mt-1 flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 text-[11px]"
+                className="mt-1 flex items-center justify-center sm:justify-start gap-1 text-[11px]"
                 style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
               >
-                <span className="flex items-center gap-1">
-                  <MapPin size={12} className="shrink-0" /> {site.location}
-                </span>
-                <span>·</span>
-                <span className="flex items-center gap-1">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                  {site.status.availableText}
-                </span>
+                <MapPin size={12} className="shrink-0" /> {site.location}
               </p>
             </div>
           </div>
 
-          {/* Command Palette Keyboard Badge */}
-          {onOpenPalette && (
-            <button
-              onClick={onOpenPalette}
-              className="flex items-center gap-2 rounded-sm px-3 py-1.5 text-[11px] transition-all duration-300 shadow-sm cursor-pointer hover:opacity-80"
-              style={{
-                border: "1px solid var(--line)",
-                background: "var(--chip)",
-                fontFamily: "var(--font-mono)",
-                color: "var(--muted)",
-              }}
-              title="Open Command Palette (Ctrl+K)"
-            >
-              <Search size={14} />
-              <span>⌘K</span>
-            </button>
-          )}
+          {/* Resume Download Button */}
+          <OutlineButton href={site.socials.resume} target="_blank">
+            <Download className="size-3.5 transition-transform duration-200 group-hover:translate-y-0.5" />
+            <span>Resume</span>
+          </OutlineButton>
         </motion.div>
       </Shell>
     </>
