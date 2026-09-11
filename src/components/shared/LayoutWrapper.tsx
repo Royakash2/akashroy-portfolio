@@ -7,6 +7,7 @@ import { Navbar } from "./Navbar";
 import { CommandPalette } from "./CommandPalette";
 import { SideIndex } from "./SideIndex";
 import { ScrollProgress } from "./ScrollProgress";
+import { Footer } from "@/components/footer";
 
 export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -32,9 +33,10 @@ export function LayoutWrapper({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ScrollProgress />
-      <Navbar onOpenPalette={() => setPaletteOpen(true)} />
+      <Navbar />
       <SideIndex />
       <main className="relative z-10">{children}</main>
+      <Footer />
       <CommandPalette
         open={paletteOpen}
         onClose={() => setPaletteOpen(false)}

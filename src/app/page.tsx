@@ -8,8 +8,6 @@ import { Writing } from "@/components/sections/Writing";
 import { GithubActivity } from "@/components/sections/GithubActivity";
 import { Contact } from "@/components/sections/Contact";
 import { GapBand } from "@/components/layout/Shell";
-import { Footer } from "@/components/footer";
-
 export default function Home() {
   return (
     <LayoutWrapper>
@@ -22,7 +20,6 @@ export default function Home() {
       <Writing limit={3} />
       <GithubActivity />
       <Contact />
-      <Footer />
     </LayoutWrapper>
   );
 }
