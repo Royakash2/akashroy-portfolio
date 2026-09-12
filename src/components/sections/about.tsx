@@ -24,29 +24,37 @@ export function About() {
           </motion.div>
         ))}
 
-        {/* Developer Snapshot Cards */}
+        {/* Developer Snapshot */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="mt-6 rounded-sm p-5"
-          style={{ border: "1px solid var(--line)", background: "var(--card)" }}
+          className="mt-4 rounded-sm p-5 space-y-4"
+          style={{ border: "1px solid var(--line)" }}
         >
           <p
-            className="text-[11px] uppercase tracking-widest font-semibold mb-3"
-            style={{ fontFamily: "var(--font-mono)", color: "var(--fg)" }}
+            className="text-[10px] uppercase tracking-widest font-semibold"
+            style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
           >
-            Developer Snapshot
+            Always On
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[13px]" style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}>
+          <div className="flex flex-wrap gap-2">
             {site.tldr.map((item) => (
-              <li key={item} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 flex-none" />
-                <span>{item}</span>
-              </li>
+              <span
+                key={item}
+                className="inline-flex items-center gap-1.5 rounded-sm border px-3 py-1.5 font-mono text-[12px] font-normal transition-colors duration-200"
+                style={{
+                  borderColor: "var(--line)",
+                  background: "var(--chip)",
+                  color: "var(--muted)",
+                }}
+              >
+                <span className="size-1.5 rounded-full flex-none"  />
+                {item}
+              </span>
             ))}
-          </ul>
+          </div>
         </motion.div>
       </Shell>
     </div>
