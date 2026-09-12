@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, JetBrains_Mono, Instrument_Serif } from "next/font/google";
+import { Sora, JetBrains_Mono, Instrument_Serif, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
 
@@ -19,6 +19,11 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-serif",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-dancing-script",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} dark`}
+      className={`${sora.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} ${dancingScript.variable} dark`}
       suppressHydrationWarning
     >
       <body

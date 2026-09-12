@@ -39,6 +39,11 @@ export type Post = {
   readingTime?: string;
 };
 
+export type Quote = {
+  text: string;
+  author: string;
+};
+
 export const site = {
   name: "Akash Roy",
   firstName: "Akash",
@@ -256,6 +261,24 @@ export const site = {
     username: "Royakash2",
     contributionsLastYear: "500+",
   },
+  quotes: [
+    {
+      text: "He who moves first always wins.",
+      author: "L Lawliet",
+    },
+    {
+      text: "It's not what we do once in a while that shapes our lives, but what we do consistently.",
+      author: "Tony Robbins",
+    },
+    {
+      text: "If you win, you live. If you lose, you die. If you don't fight, you can't win.",
+      author: "Eren Yeager",
+    },
+    {
+      text: "Set thy heart upon thy work, but never on its reward.",
+      author: "Sri Krishna",
+    },
+  ] as Quote[],
   footerNote: "Built with ❤️ and hardwork",
 } as const;
 
