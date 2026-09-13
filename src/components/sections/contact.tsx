@@ -1,12 +1,11 @@
 "use client";
-
-import Link from "next/link";
 import { Shell, SectionHeader } from "@/components/layout/Shell";
 import { Reveal } from "@/components/shared/Reveal";
 import { site } from "@/config/site";
 import { Separator } from "@/components/ui/separator";
 import { TbBrandGithub, TbBrandLinkedin, TbBrandX } from "react-icons/tb";
 import { Mail } from "lucide-react";
+import { OutlineButton } from "@/components/ui/OutlineButton";
 
 const socials = [
   { icon: TbBrandGithub, href: site.socials.github, label: "GitHub" },
@@ -52,23 +51,18 @@ export function Contact() {
             </div>
 
             {/* Social links */}
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3">
               {socials.map((s) => (
-                <Link
+                <OutlineButton
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-sm px-4 py-2 text-[12px] transition-all duration-300 hover:opacity-80"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    color: "var(--muted)",
-                    border: "1px solid var(--line)",
-                    background: "var(--chip)",
-                  }}
+                  ariaLabel={s.label}
+                  className="sm:px-4"
                 >
-                  <s.icon size={15} />
-                  {s.label}
-                </Link>
+                  <s.icon size={14} />
+                  <span className="hidden sm:inline">{s.label}</span>
+                </OutlineButton>
               ))}
             </div>
           </div>

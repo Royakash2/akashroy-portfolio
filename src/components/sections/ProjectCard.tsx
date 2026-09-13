@@ -20,7 +20,7 @@ export function ProjectCard({
 
   return (
     <Card
-      className="group flex flex-col justify-between rounded-sm p-5 transition-all duration-300 hover:-translate-y-1 h-full border border-(--line) hover:border-(--fg) bg-card text-inherit shadow-none ring-0 gap-0"
+      className="group flex flex-col justify-between rounded-sm p-5 h-full border border-(--line) bg-card text-inherit shadow-none ring-0 gap-0"
     >
       <div>
         {/* Angled Screenshot Preview Canvas Box */}

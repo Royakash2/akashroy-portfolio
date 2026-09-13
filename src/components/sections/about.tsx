@@ -43,7 +43,7 @@ export function About() {
             {site.tldr.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-1.5 rounded-sm border px-3 py-1.5 font-mono text-[12px] font-normal transition-colors duration-200"
+                className="inline-flex items-center gap-1.5 rounded-sm border px-3 py-1.5 font-mono text-[10px] md:text-[12px] font-normal transition-colors duration-200"
                 style={{
                   borderColor: "var(--line)",
                   background: "var(--chip)",
