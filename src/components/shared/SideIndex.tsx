@@ -31,11 +31,11 @@ export function SideIndex() {
           <a
             key={item.id}
             href={`#${item.id}`}
-            className="group flex items-center gap-2.5 text-[12px] font-medium tracking-[0.05em] transition-all duration-300"
+            className={`group flex items-center gap-2.5 text-[12px] tracking-[0.05em] transition-all duration-300 hover:text-(--fg) ${
+              isActive ? "text-(--fg) font-semibold" : "text-(--soft) font-medium"
+            }`}
             style={{
               fontFamily: "var(--font-mono)",
-              color: isActive ? "var(--fg)" : "var(--soft)",
-              fontWeight: isActive ? 600 : 500,
             }}
           >
             <span
