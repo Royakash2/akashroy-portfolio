@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Shell, SectionHeader, GapBand } from "@/components/layout/Shell";
 import { site } from "@/config/site";
 import { ProjectCard } from "./ProjectCard";
+import { FilterTabs } from "@/components/shared/FilterTabs";
+
+const PROJECT_TABS = ["All", "Frontend", "Backend", "Fullstack"] as const;
 
 export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
   const [projectTab, setProjectTab] = useState<string>("All");
@@ -25,26 +28,12 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
         title="Projects"
         aside={
           !isSearchable ? (
-            <div
-              className="flex gap-1 rounded-sm p-0.5"
-              style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
-            >
-              {["All", "Frontend", "Backend", "Fullstack"].map((tab) => (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setProjectTab(tab)}
-                  className="flex items-center justify-center text-center rounded-sm px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer"
-                  style={{
-                    background: projectTab === tab ? "var(--fg)" : "transparent",
-                    color: projectTab === tab ? "var(--bg)" : "var(--muted)",
-                    fontWeight: projectTab === tab ? 600 : 400,
-                  }}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
+            <FilterTabs
+              tabs={PROJECT_TABS}
+              value={projectTab}
+              onValueChange={setProjectTab}
+              size="sm"
+            />
           ) : undefined
         }
       />

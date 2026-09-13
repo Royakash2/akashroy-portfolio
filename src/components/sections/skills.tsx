@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shell, SectionHeader, GapBand } from "@/components/layout/Shell";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { site } from "@/config/site";
+import { FilterTabs } from "@/components/shared/FilterTabs";
 import type { ComponentType, CSSProperties } from "react";
 import {
   Layers,
@@ -83,12 +83,10 @@ function SkillIcon({ skill, hovered }: { skill: string; hovered?: boolean }) {
   const meta = skillIcons[skill];
   const Icon = (meta?.icon ?? Cpu) as IconType;
 
-  // No brand colors — inherit current text color (goes white on hover automatically)
   if (!meta?.darkColor && !meta?.lightColor) {
     return <Icon className="size-4 shrink-0 text-current" aria-hidden />;
   }
 
-  // Keep brand color unless badge is hovered, then inherit (turns white/bg)
   return (
     <span className="flex items-center">
       <Icon
@@ -132,59 +130,38 @@ export function Skills() {
         }
       />
       <Shell className="px-6 py-6 sm:px-8">
-        {/* Category Tabs — shadcn Tabs component */}
-        <Tabs value={activeCategory} onValueChange={setActiveCategory}>
-          <TabsList
-            className="h-auto w-full flex-wrap justify-start gap-1.5 rounded-sm border border-(--line) bg-(--chip) p-1"
-          >
-            {categories.map((cat) => {
-              const TabIcon = CATEGORY_ICONS[cat] ?? Layers;
-              return (
-                <TabsTrigger
-                  key={cat}
-                  value={cat}
-                  className="cursor-pointer h-auto rounded-sm px-3 py-1.5 text-[12px] font-medium
-                    text-(--muted) hover:bg-(--hover) hover:text-(--fg)
-                    data-active:bg-(--fg) data-active:font-semibold data-active:text-(--bg) data-active:shadow-sm
-                    data-active:hover:bg-(--fg) data-active:hover:text-(--bg)"
-                >
-                  <TabIcon className="size-3.5" aria-hidden />
-                  {cat}
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
+        <FilterTabs
+          tabs={categories}
+          value={activeCategory}
+          onValueChange={setActiveCategory}
+          icons={CATEGORY_ICONS}
+          size="md"
+        />
 
-          {/* All categories share one content panel — filtering is done in JS */}
-          {categories.map((cat) => (
-            <TabsContent key={cat} value={cat}>
-              <motion.div layout className="mt-6 flex flex-wrap gap-2.5">
-                <AnimatePresence mode="popLayout">
-                  {filteredSkills.map((skill) => (
-                    <motion.span
-                      key={skill}
-                      layout
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.2, type: "spring", stiffness: 300, damping: 25 }}
-                    >
-                      <Badge
-                        variant="outline"
-                        onMouseEnter={() => setHoveredSkill(skill)}
-                        onMouseLeave={() => setHoveredSkill(null)}
-                        className="flex h-auto w-auto cursor-default items-center gap-2 rounded-sm border-(--line) bg-card px-3 py-1.5 font-mono text-[12px] font-normal text-(--muted) shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg)"
-                      >
-                        <SkillIcon skill={skill} hovered={hoveredSkill === skill} />
-                        <span>{skill}</span>
-                      </Badge>
-                    </motion.span>
-                  ))}
-                </AnimatePresence>
-              </motion.div>
-            </TabsContent>
-          ))}
-        </Tabs>
+        <motion.div key={activeCategory} layout className="mt-6 flex flex-wrap gap-2.5">
+          <AnimatePresence mode="popLayout">
+            {filteredSkills.map((skill) => (
+              <motion.span
+                key={skill}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.2, type: "spring", stiffness: 300, damping: 25 }}
+              >
+                <Badge
+                  variant="outline"
+                  onMouseEnter={() => setHoveredSkill(skill)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                  className="flex h-auto w-auto cursor-default items-center gap-2 rounded-sm border-(--line) bg-card px-3 py-1.5 font-mono text-[12px] font-normal text-(--muted) shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg)"
+                >
+                  <SkillIcon skill={skill} hovered={hoveredSkill === skill} />
+                  <span>{skill}</span>
+                </Badge>
+              </motion.span>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </Shell>
       <GapBand />
     </>
