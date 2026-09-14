@@ -31,7 +31,7 @@ export function SideIndex() {
           <a
             key={item.id}
             href={`#${item.id}`}
-            className={`group flex items-center gap-2.5 text-[12px] tracking-[0.05em] transition-all duration-300 hover:text-(--fg) ${
+            className={`group flex items-center gap-2.5 text-[12px] tracking-wider transition-all duration-300 hover:text-(--fg) ${
               isActive ? "text-(--fg) font-semibold" : "text-(--soft) font-medium"
             }`}
             style={{
@@ -39,7 +39,7 @@ export function SideIndex() {
             }}
           >
             <span
-              className="h-[1px] transition-all duration-300"
+              className="h-px transition-all duration-300"
               style={{
                 background: "currentColor",
                 width: isActive ? "16px" : "0px",
