@@ -11,7 +11,6 @@ const PROJECT_TABS = ["All", "Frontend", "Backend", "Fullstack"] as const;
 
 export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
   const [projectTab, setProjectTab] = useState<string>("All");
-  const [searchQuery] = useState("");
 
   const displayedProjects = useMemo(() => {
     return site.projects.filter((p) => {
