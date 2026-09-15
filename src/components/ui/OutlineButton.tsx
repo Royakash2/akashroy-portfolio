@@ -11,7 +11,6 @@ export interface OutlineButtonProps {
   onClick?: (e: React.MouseEvent) => void;
   children: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
   ariaLabel?: string;
   type?: "button" | "submit" | "reset";
 }
@@ -27,16 +26,11 @@ export function OutlineButton({
   onClick,
   children,
   className,
-  style,
   ariaLabel,
   type = "button",
 }: OutlineButtonProps) {
   const baseClasses =
     "inline-flex items-center gap-1.5 rounded-sm border border-(--line) bg-transparent px-3 py-1.5 text-[12px] font-mono font-medium text-(--muted) shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg) group shrink-0 cursor-pointer select-none";
-
-  const baseStyle: React.CSSProperties = {
-    ...style,
-  };
 
   if (href) {
     const isExternal = target === "_blank" || href.startsWith("http");
@@ -50,7 +44,6 @@ export function OutlineButton({
           onClick={onClick}
           aria-label={ariaLabel}
           className={cn(baseClasses, className)}
-          style={baseStyle}
         >
           {children}
         </a>
@@ -63,7 +56,6 @@ export function OutlineButton({
         onClick={onClick}
         aria-label={ariaLabel}
         className={cn(baseClasses, className)}
-        style={baseStyle}
       >
         {children}
       </Link>
@@ -76,7 +68,6 @@ export function OutlineButton({
       onClick={onClick}
       aria-label={ariaLabel}
       className={cn(baseClasses, className)}
-      style={baseStyle}
     >
       {children}
     </button>

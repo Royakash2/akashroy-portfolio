@@ -168,8 +168,7 @@ export function CommandPalette({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 backdrop-blur-md"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+            className="fixed inset-0 backdrop-blur-md bg-black/[0.8]"
           />
 
           <motion.div
@@ -177,41 +176,25 @@ export function CommandPalette({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-sm shadow-2xl backdrop-blur-xl max-h-[60vh] z-10"
-            style={{
-              border: "1px solid rgba(255,255,255,0.08)",
-              backgroundColor: "rgba(18, 18, 18, 0.95)",
-            }}
+            className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-sm shadow-2xl backdrop-blur-xl max-h-[60vh] z-10 border border-white/[0.08] bg-[#121212]/95"
           >
-            <div
-              className="flex items-center px-4 py-3.5 gap-2.5"
-              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
-            >
-              <Search className="shrink-0" size={18} style={{ color: "#71717a" }} />
+            <div className="flex items-center px-4 py-3.5 gap-2.5 border-b border-white/[0.08]">
+              <Search className="shrink-0 text-[#71717a]" size={18} />
               <Input
                 ref={inputRef}
                 value={query}
                 onChange={(e) => { setQuery(e.target.value); setSelectedIndex(0); }}
                 placeholder="Search pages, projects, or actions..."
-                className="h-auto w-full border-none bg-transparent px-0 py-0 text-sm focus-visible:ring-0"
-                style={{ color: "#f5f5f4" }}
+                className="h-auto w-full border-none bg-transparent px-0 py-0 text-sm focus-visible:ring-0 text-[#f5f5f4]"
               />
-              <kbd
-                className="hidden sm:inline-block rounded-sm px-1.5 py-0.5 text-[10px]"
-                style={{
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  backgroundColor: "rgba(255,255,255,0.05)",
-                  fontFamily: "var(--font-mono)",
-                  color: "#71717a",
-                }}
-              >
+              <kbd className="hidden sm:inline-block rounded-sm px-1.5 py-0.5 text-[10px] border border-white/[0.1] bg-white/[0.05] font-mono text-[#71717a]">
                 ESC
               </kbd>
             </div>
 
             <div ref={listRef} className="flex-1 overflow-y-auto py-2">
               {filteredItems.length === 0 ? (
-                <div className="px-4 py-8 text-center text-xs" style={{ fontFamily: "var(--font-mono)", color: "#71717a" }}>
+                <div className="px-4 py-8 text-center text-xs font-mono text-[#71717a]">
                   No commands matched &quot;{query}&quot;
                 </div>
               ) : (
@@ -223,10 +206,7 @@ export function CommandPalette({
                   }, {} as Record<string, PaletteItem[]>)
                 ).map(([category, catItems]) => (
                   <div key={category} className="py-2 first:pt-0 last:pb-0">
-                    <h4
-                      className="px-4 py-1.5 text-[9px] uppercase tracking-wider font-semibold"
-                      style={{ fontFamily: "var(--font-mono)", color: "#52525b" }}
-                    >
+                    <h4 className="px-4 py-1.5 text-[9px] uppercase tracking-wider font-semibold font-mono text-[#52525b]">
                       {category}
                     </h4>
                     <div className="mt-1 flex flex-col px-2 gap-0.5">
@@ -239,14 +219,13 @@ export function CommandPalette({
                             data-active={isActive}
                             onClick={item.action}
                             onMouseEnter={() => setSelectedIndex(itemIndex)}
-                            className="flex items-center gap-3.5 rounded-sm px-3.5 py-2.5 text-left w-full transition-all duration-150"
-                            style={{
-                              border: isActive ? "1px solid rgba(255,255,255,0.1)" : "1px solid transparent",
-                              backgroundColor: isActive ? "rgba(255,255,255,0.08)" : "transparent",
-                              color: isActive ? "#f5f5f4" : "#d4d4d8",
-                            }}
+                            className={`flex items-center gap-3.5 rounded-sm px-3.5 py-2.5 text-left w-full transition-all duration-150 border ${
+                              isActive
+                                ? "border-white/[0.1] bg-white/[0.08] text-[#f5f5f4]"
+                                : "border-transparent bg-transparent text-[#d4d4d8]"
+                            }`}
                           >
-                            <span style={{ color: isActive ? "#f5f5f4" : "#71717a" }}>
+                            <span className={isActive ? "text-[#f5f5f4]" : "text-[#71717a]"}>
                               {item.icon}
                             </span>
                             <div className="flex-1 min-w-0">
@@ -255,15 +234,16 @@ export function CommandPalette({
                               </p>
                               {item.subtitle && (
                                 <p
-                                  className="text-[10px] leading-tight truncate mt-0.5"
-                                  style={{ color: isActive ? "#d4d4d8" : "#71717a" }}
+                                  className={`text-[10px] leading-tight truncate mt-0.5 ${
+                                    isActive ? "text-[#d4d4d8]" : "text-[#71717a]"
+                                  }`}
                                 >
                                   {item.subtitle}
                                 </p>
                               )}
                             </div>
                             {isActive && (
-                              <ExternalLink size={12} className="opacity-60" style={{ color: "#f5f5f4" }} />
+                              <ExternalLink size={12} className="opacity-60 text-[#f5f5f4]" />
                             )}
                           </button>
                         );
@@ -274,15 +254,7 @@ export function CommandPalette({
               )}
             </div>
 
-            <div
-              className="flex items-center justify-between px-4 py-2.5 text-[9px]"
-              style={{
-                borderTop: "1px solid rgba(255,255,255,0.08)",
-                backgroundColor: "rgba(0,0,0,0.3)",
-                fontFamily: "var(--font-mono)",
-                color: "#52525b",
-              }}
-            >
+            <div className="flex items-center justify-between px-4 py-2.5 text-[9px] border-t border-white/[0.08] bg-black/[0.3] font-mono text-[#52525b]">
               <div className="flex gap-2">
                 <span>↑↓ navigate</span>
                 <span>•</span>
