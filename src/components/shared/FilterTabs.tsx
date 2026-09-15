@@ -25,8 +25,8 @@ export function FilterTabs({
   return (
     <Tabs value={value} onValueChange={(val) => onValueChange(val as string)}>
       <TabsList
-        className={`flex flex-wrap items-center gap-1 rounded-sm border border-(--line) bg-(--chip) ${
-          isSm ? "p-0.5 h-auto" : "p-1 h-auto w-full justify-start gap-1.5"
+        className={`inline-flex flex-wrap items-center gap-1 rounded-sm border border-(--line) bg-(--chip) ${
+          isSm ? "p-0.5 h-auto w-fit" : "p-0.5 sm:p-1 h-auto w-fit justify-start gap-1 sm:gap-1.5"
         } ${className}`}
       >
         {tabs.map((tab) => {
@@ -38,13 +38,12 @@ export function FilterTabs({
               key={tab}
               value={tab}
               className={`flex items-center justify-center gap-1.5 text-center rounded-sm transition-all duration-200 cursor-pointer border-0 shadow-none hover:opacity-80 data-[state=active]:shadow-none ${
-                isSm ? "px-2.5 py-1 text-[11px] font-medium" : "px-3 py-1.5 text-[12px] font-medium"
+                isSm ? "px-2 py-0.5 text-[11px]" : "px-2.5 py-1 text-[11.5px]"
+              } ${
+                isActive
+                  ? "bg-(--fg)! text-(--bg)! font-semibold"
+                  : "bg-transparent text-(--muted) font-normal"
               }`}
-              style={{
-                background: isActive ? "var(--fg)" : "transparent",
-                color: isActive ? "var(--bg)" : "var(--muted)",
-                fontWeight: isActive ? 600 : 400,
-              }}
             >
               {Icon && <Icon className={isSm ? "size-3" : "size-3.5"} aria-hidden />}
               <span>{tab}</span>
