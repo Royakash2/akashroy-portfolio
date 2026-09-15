@@ -111,8 +111,15 @@
 /* ================================================================== */
 /*  Base Styles                                                       */
 /* ================================================================== */
-* {
-  border-color: var(--line);
+/*
+ * Default border color. This must stay inside @layer base so Tailwind's
+ * border-* color utilities (which live in @layer utilities) can override it.
+ * An unlayered rule would beat every border color class.
+ */
+@layer base {
+  * {
+    border-color: var(--line);
+  }
 }
 
 html {

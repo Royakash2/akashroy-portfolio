@@ -50,13 +50,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="min-h-screen antialiased"
+        className="min-h-screen antialiased font-sans bg-(--bg) text-(--fg)"
         suppressHydrationWarning
-        style={{
-          fontFamily: "var(--font-sans)",
-          backgroundColor: "var(--bg)",
-          color: "var(--fg)",
-        }}
       >
         <ThemeProvider>
           {children}

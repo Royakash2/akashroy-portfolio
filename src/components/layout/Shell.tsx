@@ -3,20 +3,13 @@ import React from "react";
 export function Shell({
   children,
   className = "",
-  style,
 }: {
   children?: React.ReactNode;
   className?: string;
-  style?: React.CSSProperties;
 }) {
   return (
     <div
-      className={`relative mx-auto w-full max-w-190 ${className}`}
-      style={{
-        borderLeft: "1px dashed var(--line)",
-        borderRight: "1px dashed var(--line)",
-        ...style,
-      }}
+      className={`relative mx-auto w-full max-w-190 [border-left:1px_dashed_var(--line)] [border-right:1px_dashed_var(--line)] ${className}`}
     >
       {children}
     </div>
@@ -34,36 +27,15 @@ export function SectionHeader({
 }) {
   return (
     <div id={id} className="relative w-full bg-(--bg)">
-      <Shell
-        style={{
-          background: "var(--bg)",
-          borderTop: "1px solid var(--line)",
-          borderBottom: "1px solid var(--line)",
-        }}
-      >
+      <Shell className="bg-(--bg) border-y border-(--line)">
         {/* Crosshair Dot Anchors (inside container corners) */}
-        <span
-          className="absolute top-0 left-0 h-0.75 w-0.75 -translate-x-1/2 -translate-y-1/2 opacity-40 z-20"
-          style={{ background: "var(--fg)" }}
-        />
-        <span
-          className="absolute top-0 right-0 h-0.75 w-0.75 translate-x-1/2 -translate-y-1/2 opacity-40 z-20"
-          style={{ background: "var(--fg)" }}
-        />
-        <span
-          className="absolute bottom-0 left-0 h-0.75 w-0.75 -translate-x-1/2 translate-y-1/2 opacity-40 z-20"
-          style={{ background: "var(--fg)" }}
-        />
-        <span
-          className="absolute bottom-0 right-0 h-0.75 w-0.75 translate-x-1/2 translate-y-1/2 opacity-40 z-20"
-          style={{ background: "var(--fg)" }}
-        />
+        <span className="absolute top-0 left-0 h-0.75 w-0.75 -translate-x-1/2 -translate-y-1/2 opacity-40 z-20 bg-(--fg)" />
+        <span className="absolute top-0 right-0 h-0.75 w-0.75 translate-x-1/2 -translate-y-1/2 opacity-40 z-20 bg-(--fg)" />
+        <span className="absolute bottom-0 left-0 h-0.75 w-0.75 -translate-x-1/2 translate-y-1/2 opacity-40 z-20 bg-(--fg)" />
+        <span className="absolute bottom-0 right-0 h-0.75 w-0.75 translate-x-1/2 translate-y-1/2 opacity-40 z-20 bg-(--fg)" />
 
-        <div className="flex items-center justify-between gap-4 px-6 py-3 sm:px-8 w-full" style={{ background: "var(--bg)" }}>
-          <h2
-            className="text-2xl tracking-wide"
-            style={{ fontFamily: "var(--font-serif)", color: "var(--fg)" }}
-          >
+        <div className="flex items-center justify-between gap-4 px-6 py-3 sm:px-8 w-full bg-(--bg)">
+          <h2 className="text-2xl tracking-wide font-serif text-(--fg)">
             {title}
           </h2>
           {aside}
@@ -82,7 +54,7 @@ export function GapBand({
 }) {
   return (
     <div className={`relative w-full bg-(--bg) ${h} ${className}`}>
-      <Shell className="h-full" style={{ background: "var(--bg)" }} />
+      <Shell className="h-full bg-(--bg)" />
     </div>
   );
 }
