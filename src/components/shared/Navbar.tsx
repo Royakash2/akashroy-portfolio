@@ -11,7 +11,7 @@ import { OutlineButton } from "@/components/ui/OutlineButton";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
-  { label: "Writing", href: "/writing" },
+  { label: "Experience", href: "/experience" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -20,7 +20,7 @@ export function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-40 backdrop-blur-md border-b border-(--line) bg-[color:color-mix(in_srgb,var(--bg)_85%,transparent)]"
+      className="sticky top-0 z-40 backdrop-blur-md border-b border-(--line) bg-[color-mix(in_srgb,var(--bg)_85%,transparent)]"
     >
       <div className="relative flex items-center px-6 py-3 sm:px-8 mx-auto w-full max-w-190">
 
@@ -97,7 +97,7 @@ export function Navbar() {
                   key={href}
                   href={href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-2 pb-2.5 transition-colors hover:opacity-100 border-b border-dashed border-[color:color-mix(in_srgb,var(--line)_50%,transparent)] text-(--muted)"
+                  className="flex items-center gap-2 pb-2.5 transition-colors hover:opacity-100 border-b border-dashed border-[color-mix(in_srgb,var(--line)_50%,transparent)] text-(--muted)"
                 >
                   <span className="size-1.5 rounded-full opacity-40 bg-(--fg)" />
                   {label}
