@@ -131,71 +131,20 @@ export const site = {
   ] as Education[],
   projects: [
     {
-      title: "TaskFlow",
+      title: "Vellox",
       blurb:
         "A modern project management app with real-time collaboration, drag-and-drop boards, and team analytics.",
       story:
-        "Built with React's compositional model, styled atomically with Tailwind CSS, and powered by Zustand for predictable state management.",
-      stack: ["React", "Next.js", "PostgreSQL", "Prisma", "WebSocket"],
-      year: "2024",
+        "Vellox is a modern project management app with real-time collaboration, drag-and-drop boards, and team analytics. Built with React's compositional model, styled atomically with Tailwind CSS, and powered by Zustand for predictable state management.",
+      stack: ["React", "Next.js", "PostgreSQL", "Prisma", "shadcn/ui", "Tailwind CSS", "TypeScript"],
+      year: "2026",
       links: {
-        live: "https://taskflow-demo.vercel.app",
-        source: "https://github.com/Royakash2/taskflow",
+        live: "https://getvellox.vercel.app/",
+        source: "https://github.com/Royakash2/project-management-system",
       },
       featured: true,
       image:
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
-      categories: ["Fullstack"],
-    },
-    {
-      title: "MarketViz",
-      blurb:
-        "Interactive data visualization platform for market research, featuring customizable dashboards and real-time data ingestion.",
-      story:
-        "Engineered with D3.js for visualizations and Node.js backend for real-time data processing.",
-      stack: ["React", "D3.js", "Node.js", "MongoDB", "TypeScript"],
-      year: "2024",
-      links: {
-        live: "https://marketviz.vercel.app",
-        source: "https://github.com/Royakash2/marketviz",
-      },
-      featured: true,
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      categories: ["Frontend"],
-    },
-    {
-      title: "DevMetrics",
-      blurb:
-        "Developer analytics dashboard that tracks code quality, productivity metrics, and team velocity across GitHub repositories.",
-      story:
-        "Integrates with GitHub API to fetch real-time contribution data and visualize team performance.",
-      stack: ["Next.js", "Python", "GitHub API", "PostgreSQL", "Tailwind CSS"],
-      year: "2024",
-      links: {
-        live: "https://devmetrics.vercel.app",
-        source: "https://github.com/Royakash2/devmetrics",
-      },
-      featured: true,
-      image:
-        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-      categories: ["Fullstack"],
-    },
-    {
-      title: "ShopLocal",
-      blurb:
-        "E-commerce platform connecting local businesses with customers, featuring inventory management and local delivery scheduling.",
-      story:
-        "Built with Next.js and Stripe integration for seamless payment processing.",
-      stack: ["React", "Node.js", "Express", "PostgreSQL", "Stripe"],
-      year: "2023",
-      links: {
-        live: "https://shoplocal.vercel.app",
-        source: "https://github.com/Royakash2/shoplocal",
-      },
-      featured: false,
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+        "/project-vellox.png",
       categories: ["Fullstack"],
     },
   ] as Project[],
@@ -275,7 +224,7 @@ export const site = {
       author: "Eren Yeager",
     },
     {
-      text: "Set thy heart upon thy work, but never on its reward.",
+      text: "Set the heart upon the work, but never on its reward.",
       author: "Sri Krishna",
     },
   ] as Quote[],
