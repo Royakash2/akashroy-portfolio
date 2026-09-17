@@ -4,10 +4,10 @@ import { Shell, SectionHeader, GapBand } from "@/components/layout/Shell";
 import { Reveal } from "@/components/shared/Reveal";
 import { site } from "@/config/site";
 
-export function Experience() {
+export function Experience({ hideHeader = false }: { hideHeader?: boolean } = {}) {
   return (
     <>
-      <SectionHeader title="Experience" id="experience" />
+      {!hideHeader && <SectionHeader title="Experience" id="experience" />}
       <Shell className="px-6 py-6 sm:px-8">
         <Reveal>
           <div className="flex flex-col divide-y divide-(--line)">
@@ -57,7 +57,7 @@ export function Experience() {
                     {exp.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-1.5 py-0.5 text-[10px] rounded font-mono text-(--soft) bg-[color:color-mix(in_srgb,var(--muted)_10%,transparent)] border border-(--line)"
+                        className="px-1.5 py-0.5 text-[10px] rounded font-mono text-(--soft) bg-[color-mix(in_srgb,var(--muted)_10%,transparent)] border border-(--line)"
                       >
                         {tech}
                       </span>

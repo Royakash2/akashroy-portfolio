@@ -25,11 +25,7 @@ export function ProjectCard({
       <div>
         {/* Angled Screenshot Preview Canvas Box */}
         <div
-          className="relative mb-4 h-48 w-full overflow-hidden rounded-sm p-3 flex flex-col justify-between"
-          style={{
-            border: "1px solid var(--line)",
-            background: "linear-gradient(135deg, var(--chip), var(--card), color-mix(in srgb, var(--bg) 40%, transparent))",
-          }}
+          className="relative mb-4 h-48 w-full overflow-hidden rounded-sm p-3 flex flex-col justify-between border border-(--line) bg-[linear-gradient(135deg,var(--chip),var(--card),color-mix(in_srgb,var(--bg)_40%,transparent))]"
         >
           {/* Stripes overlay */}
           <div className="bg-stripes absolute inset-0 opacity-20 pointer-events-none" />
@@ -37,23 +33,21 @@ export function ProjectCard({
           {/* Viewfinder Reticles (Camera REC / ISO) */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
             {/* Corner brackets */}
-            <div className="absolute top-2.5 left-2.5 w-2.5 h-2.5 border-t border-l opacity-70" style={{ borderColor: "var(--fg)" }} />
-            <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 border-t border-r opacity-70" style={{ borderColor: "var(--fg)" }} />
-            <div className="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 border-b border-l opacity-70" style={{ borderColor: "var(--fg)" }} />
-            <div className="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 border-b border-r opacity-70" style={{ borderColor: "var(--fg)" }} />
+            <div className="absolute top-2.5 left-2.5 w-2.5 h-2.5 border-t border-l opacity-70 border-(--fg)" />
+            <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 border-t border-r opacity-70 border-(--fg)" />
+            <div className="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 border-b border-l opacity-70 border-(--fg)" />
+            <div className="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 border-b border-r opacity-70 border-(--fg)" />
 
             {/* REC indicator */}
             <div
-              className="absolute top-2.5 left-7 flex items-center gap-1 text-[8px] font-semibold opacity-80"
-              style={{ fontFamily: "var(--font-mono)", color: "var(--fg)" }}
+              className="absolute top-2.5 left-7 flex items-center gap-1 text-[8px] font-semibold opacity-80 font-mono text-(--fg)"
             >
               <span className="size-1.5 rounded-full bg-rose-500 animate-pulse" /> REC
             </div>
 
             {/* ISO indicator */}
             <div
-              className="absolute top-2.5 right-7 text-[8px] font-semibold opacity-80"
-              style={{ fontFamily: "var(--font-mono)", color: "var(--fg)" }}
+              className="absolute top-2.5 right-7 text-[8px] font-semibold opacity-80 font-mono text-(--fg)"
             >
               ISO 400
             </div>
@@ -62,8 +56,7 @@ export function ProjectCard({
           {/* Angled Screenshot Image */}
           {p.image && !imgError ? (
             <div
-              className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-sm shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none"
-              style={{ border: "4px solid color-mix(in srgb, var(--bg) 40%, transparent)" }}
+              className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-sm shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none border-4 border-[color-mix(in_srgb,var(--bg)_40%,transparent)]"
             >
               <Image
                 src={p.image}
@@ -75,10 +68,7 @@ export function ProjectCard({
               />
             </div>
           ) : (
-            <div
-              className="text-2xl self-end opacity-90"
-              style={{ fontFamily: "var(--font-serif)", color: "var(--fg)" }}
-            >
+            <div className="text-2xl self-end opacity-90 font-serif text-(--fg)">
               {p.title}
             </div>
           )}
@@ -86,24 +76,15 @@ export function ProjectCard({
 
         {/* Project Header Info */}
         <div className="flex items-start justify-between gap-2">
-          <h3
-            className="text-[16px] font-semibold tracking-wide"
-            style={{ color: "var(--fg)" }}
-          >
+          <h3 className="text-[16px] font-semibold tracking-wide text-(--fg)">
             {p.title}
           </h3>
-          <span
-            className="text-xs"
-            style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
-          >
+          <span className="text-xs font-mono text-(--soft)">
             {p.year}
           </span>
         </div>
 
-        <p
-          className="mt-2 text-[13px] leading-relaxed line-clamp-4"
-          style={{ color: "var(--muted)" }}
-        >
+        <p className="mt-2 text-[13px] leading-relaxed line-clamp-4 text-(--muted)">
           {p.blurb}
         </p>
 
@@ -113,8 +94,7 @@ export function ProjectCard({
             <button
               type="button"
               onClick={() => setShowDetails(!showDetails)}
-              className="flex items-center gap-1 text-[10px] cursor-pointer outline-none hover:opacity-80 transition-opacity"
-              style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
+              className="flex items-center gap-1 text-[10px] cursor-pointer outline-none hover:opacity-80 transition-opacity font-mono text-(--soft)"
             >
               {showDetails ? "Hide engineering details" : "Show engineering details"}
               {showDetails ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
@@ -128,15 +108,7 @@ export function ProjectCard({
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div
-                    className="mt-2.5 rounded-sm p-3 text-[12px] leading-relaxed space-y-1.5"
-                    style={{
-                      border: "1px solid color-mix(in srgb, var(--line) 50%, transparent)",
-                      borderLeft: "2px solid var(--soft)",
-                      background: "color-mix(in srgb, var(--chip) 60%, transparent)",
-                      color: "var(--muted)",
-                    }}
-                  >
+                  <div className="mt-2.5 rounded-sm p-3 text-[12px] leading-relaxed space-y-1.5 border border-l-2 border-[color-mix(in_srgb,var(--line)_50%,transparent)] border-l-(--soft) bg-[color-mix(in_srgb,var(--chip)_60%,transparent)] text-(--muted)">
                     {p.story.split("\n\n").map((para, idx) => (
                       <p key={idx}>{para}</p>
                     ))}
@@ -149,29 +121,19 @@ export function ProjectCard({
       </div>
 
       {/* Tech Pills & Direct Links */}
-      <div
-        className="mt-4 flex items-center justify-between gap-3 pt-3"
-        style={{ borderTop: "1px solid color-mix(in srgb, var(--line) 50%, transparent)" }}
-      >
+      <div className="mt-4 flex items-center justify-between gap-3 pt-3 border-t border-[color-mix(in_srgb,var(--line)_50%,transparent)]">
         <div className="flex flex-wrap gap-1.5">
           {p.stack.map((t) => (
             <Badge
               key={t}
               variant="outline"
-              className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal text-(--muted)"
-              style={{
-                background: "color-mix(in srgb, var(--fg) 8%, transparent)",
-                border: "1px solid color-mix(in srgb, var(--fg) 12%, transparent)",
-              }}
+              className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal text-(--muted) bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] border-[color-mix(in_srgb,var(--fg)_12%,transparent)]"
             >
               {t}
             </Badge>
           ))}
         </div>
-        <div
-          className="flex shrink-0 items-center gap-2.5"
-          style={{ color: "var(--soft)" }}
-        >
+        <div className="flex shrink-0 items-center gap-2.5 text-(--soft)">
           {p.links.live && (
             <a
               href={p.links.live}
