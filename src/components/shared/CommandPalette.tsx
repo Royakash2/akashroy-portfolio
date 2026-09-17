@@ -40,14 +40,22 @@ export function CommandPalette({
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [prevOpen, setPrevOpen] = useState(open);
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  if (open !== prevOpen) {
+    setPrevOpen(open);
     if (open) {
       setQuery("");
       setSelectedIndex(0);
-      setTimeout(() => inputRef.current?.focus(), 50);
+    }
+  }
+
+  useEffect(() => {
+    if (open) {
+      const timer = setTimeout(() => inputRef.current?.focus(), 50);
+      return () => clearTimeout(timer);
     }
   }, [open]);
 
@@ -78,12 +86,12 @@ export function CommandPalette({
       action: () => { router.push("/projects"); onClose(); },
     },
     {
-      id: "nav-writing",
+      id: "nav-experience",
       category: "navigation",
-      title: "Go to Writing",
-      subtitle: "Technical articles & blog posts",
+      title: "Go to Experience",
+      subtitle: "Work history, roles, and technologies",
       icon: <BookOpen size={16} />,
-      action: () => { router.push("/writing"); onClose(); },
+      action: () => { router.push("/experience"); onClose(); },
     },
     {
       id: "nav-contact",
@@ -168,7 +176,7 @@ export function CommandPalette({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 backdrop-blur-md bg-black/[0.8]"
+            className="fixed inset-0 backdrop-blur-md bg-black/80"
           />
 
           <motion.div
@@ -176,9 +184,9 @@ export function CommandPalette({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-sm shadow-2xl backdrop-blur-xl max-h-[60vh] z-10 border border-white/[0.08] bg-[#121212]/95"
+            className="relative flex w-full max-w-lg flex-col overflow-hidden rounded-sm shadow-2xl backdrop-blur-xl max-h-[60vh] z-10 border border-white/8 bg-[#121212]/95"
           >
-            <div className="flex items-center px-4 py-3.5 gap-2.5 border-b border-white/[0.08]">
+            <div className="flex items-center px-4 py-3.5 gap-2.5 border-b border-white/8">
               <Search className="shrink-0 text-[#71717a]" size={18} />
               <Input
                 ref={inputRef}
@@ -187,7 +195,7 @@ export function CommandPalette({
                 placeholder="Search pages, projects, or actions..."
                 className="h-auto w-full border-none bg-transparent px-0 py-0 text-sm focus-visible:ring-0 text-[#f5f5f4]"
               />
-              <kbd className="hidden sm:inline-block rounded-sm px-1.5 py-0.5 text-[10px] border border-white/[0.1] bg-white/[0.05] font-mono text-[#71717a]">
+              <kbd className="hidden sm:inline-block rounded-sm px-1.5 py-0.5 text-[10px] border border-white/10 bg-white/5 font-mono text-[#71717a]">
                 ESC
               </kbd>
             </div>
@@ -221,7 +229,7 @@ export function CommandPalette({
                             onMouseEnter={() => setSelectedIndex(itemIndex)}
                             className={`flex items-center gap-3.5 rounded-sm px-3.5 py-2.5 text-left w-full transition-all duration-150 border ${
                               isActive
-                                ? "border-white/[0.1] bg-white/[0.08] text-[#f5f5f4]"
+                                ? "border-white/10 bg-white/8 text-[#f5f5f4]"
                                 : "border-transparent bg-transparent text-[#d4d4d8]"
                             }`}
                           >
@@ -254,7 +262,7 @@ export function CommandPalette({
               )}
             </div>
 
-            <div className="flex items-center justify-between px-4 py-2.5 text-[9px] border-t border-white/[0.08] bg-black/[0.3] font-mono text-[#52525b]">
+            <div className="flex items-center justify-between px-4 py-2.5 text-[9px] border-t border-white/8 bg-black/30 font-mono text-[#52525b]">
               <div className="flex gap-2">
                 <span>↑↓ navigate</span>
                 <span>•</span>
