@@ -14,24 +14,22 @@ const socials = [
   { icon: Mail, href: site.socials.email, label: "Email" },
 ];
 
-export function Contact() {
+export function Contact({ hideHeader = false }: { hideHeader?: boolean } = {}) {
   return (
     <>
-      <SectionHeader title="Contact" id="contact" />
+      {!hideHeader && <SectionHeader title="Contact" id="contact" />}
       <Shell className="px-6 py-6 sm:px-8">
         <Reveal>
           <div className="flex flex-col items-center text-center space-y-8 pb-12">
             {/* Large heading */}
             <div className="space-y-3">
               <h2
-                className="text-3xl sm:text-4xl tracking-tight"
-                style={{ fontFamily: "var(--font-serif)", color: "var(--fg)" }}
+                className="text-3xl sm:text-4xl tracking-tight font-serif text-(--fg)"
               >
                 Let&apos;s work together
               </h2>
               <p
-                className="text-[13px] max-w-sm mx-auto leading-relaxed"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
+                className="text-[13px] max-w-sm mx-auto leading-relaxed font-mono text-(--muted)"
               >
                 Open to freelance work, full-time roles, and cool side projects.
                 Drop me a message anytime.
@@ -42,8 +40,7 @@ export function Contact() {
             <div className="flex items-center gap-4 w-full max-w-xs">
               <Separator className="flex-1 w-auto" />
               <span
-                className="text-[11px]"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
+                className="text-[11px] font-mono text-(--soft)"
               >
                 or find me on
               </span>

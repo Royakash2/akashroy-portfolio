@@ -35,10 +35,7 @@ export function Hero() {
     <>
       {/* Cover Banner */}
       <Shell className="px-2 pt-2 sm:px-3 sm:pt-3">
-        <div
-          className="relative h-36 overflow-hidden rounded-sm sm:h-44"
-          style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
-        >
+        <div className="relative h-36 overflow-hidden rounded-sm sm:h-44 border border-(--line) bg-(--chip)">
           <Image
             src={site.bannerImage}
             alt="Cover"
@@ -46,27 +43,9 @@ export function Hero() {
             priority
             className="object-cover object-center opacity-65 grayscale"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, var(--bg), transparent)",
-            }}
-          />
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 5px)",
-            }}
-          />
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(90deg, rgba(0,0,0,0.12) 0, rgba(0,0,0,0.12) 1px, transparent 1px, transparent 28px)",
-            }}
-          />
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--bg),transparent)]" />
+          <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.05)_0,rgba(255,255,255,0.05)_1px,transparent_1px,transparent_5px)]" />
+          <div className="absolute inset-0 opacity-30 bg-[repeating-linear-gradient(90deg,rgba(0,0,0,0.12)_0,rgba(0,0,0,0.12)_1px,transparent_1px,transparent_28px)]" />
         </div>
       </Shell>
 
@@ -82,8 +61,7 @@ export function Hero() {
             {/* Avatar */}
             <div
               onClick={handleNextImage}
-              className="relative grid size-20 shrink-0 place-items-center overflow-hidden rounded-sm shadow-md group cursor-pointer select-none animate-fade-up"
-              style={{ border: "1px solid var(--line)", background: "var(--chip)" }}
+              className="relative grid size-20 shrink-0 place-items-center overflow-hidden rounded-sm shadow-md group cursor-pointer select-none animate-fade-up border border-(--line) bg-(--chip)"
               title="Click to change profile image"
             >
               <Image
@@ -95,12 +73,7 @@ export function Hero() {
 
               {/* CRT scanline overlay */}
               <div
-                className="absolute inset-0 pointer-events-none rounded-sm overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.25) 50%)",
-                  backgroundSize: "100% 4px",
-                }}
+                className="absolute inset-0 pointer-events-none rounded-sm overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-size-[100%_4px]"
               >
                 <div className="absolute inset-0 h-1 bg-white/20 blur-[1px] animate-scanline" />
               </div>
@@ -111,12 +84,7 @@ export function Hero() {
                   e.stopPropagation();
                   handleNextImage();
                 }}
-                className="absolute right-1 top-1 rounded-full p-1 transition-all hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100 z-20 cursor-pointer shadow-sm"
-                style={{
-                  border: "1px solid var(--line)",
-                  background: "var(--chip)",
-                  color: "var(--muted)",
-                }}
+                className="absolute right-1 top-1 rounded-full p-1 transition-all hover:scale-110 opacity-100 z-20 cursor-pointer shadow-sm border border-(--line) bg-(--chip) text-(--muted)"
                 aria-label="Switch profile image"
               >
                 <RotateCw size={10} strokeWidth={2} />
@@ -125,8 +93,7 @@ export function Hero() {
 
             <div>
               <h1
-                className="text-3xl sm:text-[38px] leading-none tracking-tight text-glitch"
-                style={{ fontFamily: "var(--font-serif)", color: "var(--fg)" }}
+                className="text-3xl sm:text-[38px] leading-none tracking-tight text-glitch font-serif text-(--fg)"
               >
                 {site.name}
               </h1>
@@ -138,16 +105,14 @@ export function Hero() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -12, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="text-[13px]"
-                    style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
+                    className="text-[13px] font-mono text-(--muted)"
                   >
                     {HEADLINE_TITLES[headlineIndex]}
                   </motion.p>
                 </AnimatePresence>
               </div>
               <p
-                className="mt-1 flex items-center justify-center sm:justify-start gap-1 text-[11px]"
-                style={{ fontFamily: "var(--font-mono)", color: "var(--soft)" }}
+                className="mt-1 flex items-center justify-center sm:justify-start gap-1 text-[11px] font-mono text-(--soft)"
               >
                 <MapPin size={12} className="shrink-0" /> {site.location}
               </p>

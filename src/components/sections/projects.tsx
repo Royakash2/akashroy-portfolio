@@ -54,10 +54,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
         </div>
 
         {displayedProjects.length === 0 && (
-          <div
-            className="py-12 text-center text-[13.5px]"
-            style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
-          >
+          <div className="py-12 text-center text-[13.5px] font-mono text-(--muted)">
             No projects match your current filter.
           </div>
         )}
