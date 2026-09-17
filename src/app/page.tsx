@@ -1,6 +1,7 @@
 import { LayoutWrapper } from "@/components/shared/LayoutWrapper";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { Now } from "@/components/sections/Now";
 import { Projects } from "@/components/sections/Projects";
 import { Skills } from "@/components/sections/Skills";
 import { Experience } from "@/components/sections/Experience";
@@ -16,6 +17,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Experience />
+      <Now />
       <GithubActivity />
       <Contact />
     </LayoutWrapper>

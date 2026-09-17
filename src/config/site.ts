@@ -85,6 +85,28 @@ export const site = {
     nowBuilding: "Portfolio v2",
     nowListening: "lo-fi beats",
   },
+  now: [
+    {
+      title: "BUILDING",
+      icon: "Terminal",
+      text: "Expanding my portfolio, doing freelance client work, and working on side projects focusing on modern web technologies.",
+    },
+    {
+      title: "LEARNING",
+      icon: "Lightbulb",
+      text: "Diving deeper into advanced React patterns, performance optimization, and exploring the backend ecosystem.",
+    },
+    {
+      title: "GOALS",
+      icon: "Target",
+      text: "Actively looking for full-time Frontend or Full-Stack roles within a product-focused engineering team.",
+    },
+    {
+      title: "READING",
+      icon: "BookOpen",
+      text: '"Refactoring UI" by Adam Wathan and keeping up with the latest engineering blogs and tech newsletters.',
+    },
+  ],
   socials: {
     github: "https://github.com/Royakash2",
     twitter: "https://twitter.com/akashsharma",
