@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shell, SectionHeader, GapBand } from "@/components/layout/Shell";
+import { Shell, PageHero, GapBand } from "@/components/layout/Shell";
 import { Reveal } from "@/components/shared/Reveal";
 import { site } from "@/config/site";
 import { ProjectCard } from "@/components/sections/ProjectCard";
@@ -36,8 +36,10 @@ export function ProjectsExplorer() {
 
   return (
     <>
-      <SectionHeader
-        title="Projects"
+      <PageHero
+        subtitle="02 / PORTFOLIO"
+        title="Projects & Works"
+        description="A collection of web applications, open-source tools, and experiments I've built along my engineering journey."
         aside={
           <FilterTabs
             tabs={PROJECT_TABS}
@@ -50,26 +52,20 @@ export function ProjectsExplorer() {
       <Shell className="px-6 py-6 sm:px-8">
         {/* Search Bar */}
         <Reveal>
-          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pb-5" style={{ borderBottom: "1px solid var(--line)" }}>
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pb-5 border-b border-(--line)">
             <div className="relative w-full sm:max-w-xs">
-              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2" style={{ color: "var(--soft)" }} />
+              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-(--soft)" />
               <Input
                 type="text"
                 placeholder="Search projects, technologies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full rounded-sm py-2 pl-9 pr-4 text-[12px] md:text-[12px] focus-visible:ring-0 transition-all"
-                style={{
-                  border: "1px solid var(--line)",
-                  background: "var(--chip)",
-                  color: "var(--fg)",
-                }}
+                className="w-full rounded-sm py-2 pl-9 pr-4 text-[12px] md:text-[12px] focus-visible:ring-0 transition-all border border-(--line) bg-(--chip) text-(--fg)"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
-                  style={{ color: "var(--soft)" }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-(--soft)"
                 >
                   <X className="size-3.5" />
                 </button>
@@ -96,10 +92,7 @@ export function ProjectsExplorer() {
         </div>
 
         {displayedProjects.length === 0 && (
-          <div
-            className="py-12 text-center text-[13px]"
-            style={{ fontFamily: "var(--font-mono)", color: "var(--muted)" }}
-          >
+          <div className="py-12 text-center text-[13px] font-mono text-(--muted)">
             No projects match your current filter.
           </div>
         )}
