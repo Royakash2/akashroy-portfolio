@@ -109,9 +109,9 @@ export const site = {
   ],
   socials: {
     github: "https://github.com/Royakash2",
-    twitter: "https://twitter.com/akashsharma",
-    linkedin: "https://linkedin.com/in/akashsharma",
-    email: "mailto:akash.sharma@email.com",
+    twitter: "https://x.com/akash_coding",
+    linkedin: "https://www.linkedin.com/in/akash-roy-0b28442b2/",
+    email: "mailto:yahmeakash@gmail.com",
     resume: "#",
   },
   experience: [
