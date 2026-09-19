@@ -3,6 +3,7 @@
 import { Shell, SectionHeader, GapBand } from "@/components/layout/Shell";
 import { Reveal } from "@/components/shared/Reveal";
 import { site } from "@/config/site";
+import { Badge } from "@/components/ui/badge";
 
 export function Experience({ hideHeader = false }: { hideHeader?: boolean } = {}) {
   return (
@@ -53,14 +54,15 @@ export function Experience({ hideHeader = false }: { hideHeader?: boolean } = {}
 
                 {/* Technologies */}
                 {exp.technologies && (
-                  <div className="flex flex-wrap gap-1 mt-3">
-                    {exp.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-1.5 py-0.5 text-[10px] rounded font-mono text-(--soft) bg-[color-mix(in_srgb,var(--muted)_10%,transparent)] border border-(--line)"
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {exp.technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="outline"
+                        className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal text-(--muted) bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] border-[color-mix(in_srgb,var(--fg)_12%,transparent)]"
                       >
                         {tech}
-                      </span>
+                      </Badge>
                     ))}
                   </div>
                 )}
