@@ -22,7 +22,7 @@ export function Navbar() {
     <header
       className="sticky top-0 z-40 backdrop-blur-md border-b border-(--line) bg-[color-mix(in_srgb,var(--bg)_85%,transparent)]"
     >
-      <div className="relative flex items-center px-6 py-3 sm:px-8 mx-auto w-full max-w-190">
+      <div className="relative flex items-center px-6 py-3 sm:px-4 mx-auto w-full max-w-190">
 
         {/* Logo — left */}
         <Link

@@ -40,11 +40,11 @@ export function Hero() {
             alt="Cover"
             fill
             priority
-            className="object-cover object-center opacity-65 grayscale"
+            className="object-cover object-center opacity-90 transition-opacity duration-300"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--bg),transparent)]" />
-          <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.05)_0,rgba(255,255,255,0.05)_1px,transparent_1px,transparent_5px)]" />
-          <div className="absolute inset-0 opacity-30 bg-[repeating-linear-gradient(90deg,rgba(0,0,0,0.12)_0,rgba(0,0,0,0.12)_1px,transparent_1px,transparent_28px)]" />
+          {/* <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--bg)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 opacity-15 bg-[repeating-linear-gradient(0deg,rgba(255,255,255,0.05)_0,rgba(255,255,255,0.05)_1px,transparent_1px,transparent_5px)]" />
+          <div className="absolute inset-0 opacity-30 bg-[repeating-linear-gradient(90deg,rgba(0,0,0,0.12)_0,rgba(0,0,0,0.12)_1px,transparent_1px,transparent_28px)]" /> */}
         </div>
       </Shell>
 
