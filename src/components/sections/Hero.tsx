@@ -11,7 +11,7 @@ import { OutlineButton } from "@/components/ui/OutlineButton";
 const HEADLINE_TITLES = [
   "Full Stack Developer",
   "Next.js & React Expert",
-  "Clean Code Advocate",
+  "Clean Code Focus",
 ];
 
 export function Hero() {
