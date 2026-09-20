@@ -28,7 +28,7 @@ export function Navbar() {
         <Link
           href="/"
           onClick={() => setMobileMenuOpen(false)}
-          className="text-2xl tracking-wide hover:opacity-80 transition-opacity shrink-0 font-(--font-dancing-script) text-(--fg)"
+          className="text-3xl tracking-wide hover:opacity-80 transition-opacity shrink-0 font-dancing text-(--fg)"
         >
           {site.firstName}
         </Link>

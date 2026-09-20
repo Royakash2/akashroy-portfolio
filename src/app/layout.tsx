@@ -23,6 +23,8 @@ const instrumentSerif = Instrument_Serif({
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["cursive", "sans-serif"],
   variable: "--font-dancing-script",
 });
 
