@@ -59,7 +59,7 @@ export const site = {
     "/Attack-on-Titan.jfif",
     "/Eren-yeager-freedom.jfif",
   ],
-  bannerImage: "/cover-image.jfif",
+  bannerImage: "/mern-cover.jfif",
   initials: "AR",
   role: "Full Stack Developer",
   location: "Sunamganj, Sylhet, Bangladesh",
@@ -69,8 +69,9 @@ export const site = {
   tagline:
     "I build modern, performant web applications with React, Next.js, and the MERN stack.",
   about: [
-    "At the end of 2025, I quit my job as a web developer after just 6 months to go all-in on building my own projects and growing as a developer. I started learning web development in 2023, and within two years I was already working professionally with React, Next.js, JavaScript, and PostgreSQL.",
-    "Now I'm doubling down on the full MERN stack and ready to build things that matter.",
+    "Hey, I'm Akash, a MERN-focused full-stack developer who loves crafting clean, modern applications where design, performance, and tiny details seamlessly come together, creating products that are both practical and visually satisfying.",
+    "I spend most of my time in the terminal, the browser, or whiteboarding solutions. I lean full-stack with a strong focus on frontend architecture and craft—not because I don't love backend, but because I enjoy making sure intuitive, polished user experiences actually hold up seamlessly under the hood.",
+    "I don't ship junk or cut corners. High standards and clean architecture aren't optional—they're the foundation. And I do my finest work when driven by genuine curiosity.",
   ],
   tldr: [
     "Building products.",
@@ -250,7 +251,7 @@ export const site = {
       author: "Sri Krishna",
     },
   ] as Quote[],
-  footerNote: "Built with ❤️ and hardwork",
+  footerNote: "",
 } as const;
 
 export type Site = typeof site;
