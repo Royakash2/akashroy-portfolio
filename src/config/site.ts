@@ -89,13 +89,13 @@ export const site = {
   now: [
     {
       title: "BUILDING",
-      icon: "Terminal",
-      text: "Expanding my portfolio, doing freelance client work, and working on side projects focusing on modern web technologies.",
+      icon: "Code2",
+      text: "Expanding my portfolio, building side projects with modern web technologies, and open for freelance client opportunities.",
     },
     {
       title: "LEARNING",
       icon: "Lightbulb",
-      text: "Diving deeper into advanced React patterns, performance optimization, and exploring the backend ecosystem.",
+      text: "Building AI-powered web applications using Vercel AI SDK, streaming LLM responses, and integrating modern AI APIs into Next.js.",
     },
     {
       title: "GOALS",
@@ -105,7 +105,7 @@ export const site = {
     {
       title: "READING",
       icon: "BookOpen",
-      text: '"Refactoring UI" by Adam Wathan and keeping up with the latest engineering blogs and tech newsletters.',
+      text: "Exploring AI Engineering guides, Vercel AI SDK patterns, and Next.js App Router deep dives.",
     },
   ],
   socials: {
@@ -172,9 +172,9 @@ export const site = {
     },
   ] as Project[],
   skillCategories: {
-    Frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "shadcn/ui", "Gatsby", "Figma"],
+    Frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "shadcn/ui", "Gatsby"],
     Backend: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Prisma", "GraphQL", "REST APIs", "WordPress"],
-    Tools: ["Git", "Vercel", "Postman", "npm", "VS Code", "Cursor", "Antigravity"],
+    Tools: ["Git", "Figma", "Vercel", "Postman", "npm", "VS Code", "Cursor", "Antigravity"],
   },
   skills: [
     "React",

@@ -14,11 +14,11 @@ export default function Home() {
       <Hero />
       <GapBand />
       <About />
-      <Projects />
       <Skills />
+      <Projects />
       <Experience />
-      <Now />
       <GithubActivity />
+      <Now />
       <Contact />
     </LayoutWrapper>
   );
