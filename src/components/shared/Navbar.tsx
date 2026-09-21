@@ -68,15 +68,15 @@ export function Navbar() {
         {/* Mobile Trigger */}
         <div className="flex sm:hidden items-center gap-3 ml-auto">
           <ThemeToggleMobile
-            className="grid size-8 place-items-center rounded-full cursor-pointer border border-(--line) text-(--muted)"
+            className="grid size-10 place-items-center rounded-full cursor-pointer border border-(--line) text-(--muted) active:scale-95 transition-transform"
           />
           <button
             type="button"
             onClick={() => setMobileMenuOpen((o) => !o)}
             aria-label="Toggle Mobile Menu"
-            className="grid size-8 place-items-center rounded-full cursor-pointer border border-(--line) text-(--muted)"
+            className="grid size-10 place-items-center rounded-full cursor-pointer border border-(--line) text-(--muted) active:scale-95 transition-transform"
           >
-            {mobileMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+            {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
       </div>
