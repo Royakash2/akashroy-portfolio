@@ -30,7 +30,7 @@ export function OutlineButton({
   type = "button",
 }: OutlineButtonProps) {
   const baseClasses =
-    "inline-flex items-center gap-1.5 rounded-sm border border-(--line) bg-transparent px-3 py-1.5 text-[12px] font-mono font-medium text-(--muted) shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg) group shrink-0 cursor-pointer select-none";
+    "inline-flex items-center gap-1.5 rounded-sm border border-(--line) bg-transparent px-3 py-1.5 text-[12px] font-mono font-medium text-(--muted) transition-all duration-200 hover:-translate-y-0.5 hover:border-(--fg) hover:bg-(--fg) hover:text-(--bg) group shrink-0 cursor-pointer select-none";
 
   if (href) {
     const isExternal = target === "_blank" || href.startsWith("http");
