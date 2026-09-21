@@ -56,7 +56,7 @@ export function ProjectCard({
           {/* Angled Screenshot Image */}
           {p.image && !imgError ? (
             <div
-              className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-sm shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none border-4 border-[color-mix(in_srgb,var(--bg)_40%,transparent)]"
+              className="absolute -right-4 -bottom-3 w-72 h-40 sm:-right-12 sm:-bottom-5 sm:w-80 sm:h-40 rounded-sm shadow-xl overflow-hidden group-hover:-right-2 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none border-4 border-[color-mix(in_srgb,var(--bg)_40%,transparent)]"
             >
               <Image
                 src={p.image}
