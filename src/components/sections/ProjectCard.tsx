@@ -96,7 +96,7 @@ export function ProjectCard({
               onClick={() => setShowDetails(!showDetails)}
               className="flex items-center gap-1 text-[10px] cursor-pointer outline-none hover:opacity-80 transition-opacity font-mono text-(--soft)"
             >
-              {showDetails ? "Hide engineering details" : "Show engineering details"}
+              {showDetails ? "Hide details" : "Show details"}
               {showDetails ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
             </button>
             <AnimatePresence initial={false}>
@@ -108,10 +108,12 @@ export function ProjectCard({
                   transition={{ duration: 0.2, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="mt-2.5 rounded-sm p-3 text-[12px] leading-relaxed space-y-1.5 border border-l-2 border-[color-mix(in_srgb,var(--line)_50%,transparent)] border-l-(--soft) bg-[color-mix(in_srgb,var(--chip)_60%,transparent)] text-(--muted)">
-                    {p.story.split("\n\n").map((para, idx) => (
-                      <p key={idx}>{para}</p>
-                    ))}
+                  <div className="mt-2.5 rounded-sm border border-l-2 border-[color-mix(in_srgb,var(--line)_50%,transparent)] border-l-(--soft) bg-[color-mix(in_srgb,var(--chip)_60%,transparent)]">
+                    <div className="max-h-40 overflow-y-auto p-3 text-[12px] leading-relaxed space-y-1.5 text-(--muted) scrollbar-thin [scrollbar-color:color-mix(in_srgb,var(--fg)_20%,transparent)_transparent]">
+                      {p.story.split("\n\n").map((para, idx) => (
+                        <p key={idx}>{para}</p>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               )}

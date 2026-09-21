@@ -156,10 +156,10 @@ export const site = {
     {
       title: "Vellox",
       blurb:
-        "A modern project management app with real-time collaboration, drag-and-drop boards, and team analytics.",
+        "A team task management app with Kanban boards, real-time notifications, and role-based access.",
       story:
-        "Vellox is a modern project management app with real-time collaboration, drag-and-drop boards, and team analytics. Built with React's compositional model, styled atomically with Tailwind CSS, and powered by Zustand for predictable state management.",
-      stack: ["React", "Next.js", "PostgreSQL", "Prisma", "shadcn/ui", "Tailwind CSS", "TypeScript"],
+        "velloX is a team task management app — Kanban boards, real-time notifications, role-based access, and file attachments. Built with Next.js 16 and TypeScript, backed by PostgreSQL. Full details, architecture decisions, and challenges are documented in the README on GitHub.",
+      stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "shadcn/ui"],
       year: "2026",
       links: {
         live: "https://getvellox.vercel.app/",
