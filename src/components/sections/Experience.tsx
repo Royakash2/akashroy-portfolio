@@ -59,7 +59,7 @@ export function Experience({ hideHeader = false }: { hideHeader?: boolean } = {}
                       <Badge
                         key={tech}
                         variant="outline"
-                        className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal text-(--muted) bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] border-[color-mix(in_srgb,var(--fg)_12%,transparent)]"
+                        className="rounded px-2 py-0.5 text-[10.5px] font-mono h-auto font-normal text-(--muted) bg-[color-mix(in_srgb,var(--fg)_8%,transparent)] border border-(--line)"
                       >
                         {tech}
                       </Badge>
