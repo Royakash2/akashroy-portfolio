@@ -29,7 +29,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="mt-4 rounded-sm p-5 space-y-4 border border-(--line)"
+          className="mt-4 rounded-sm px-3 py-5 space-y-4 border border-(--line)"
         >
           <p className="text-[10px] uppercase tracking-widest font-semibold font-mono text-(--soft)">
             Always On
