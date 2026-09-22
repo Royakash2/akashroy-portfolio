@@ -31,7 +31,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
               tabs={PROJECT_TABS}
               value={projectTab}
               onValueChange={setProjectTab}
-              size="sm"
+              size="md"
             />
           ) : undefined
         }

@@ -57,7 +57,7 @@ export function Contact({ hideHeader = false }: { hideHeader?: boolean } = {}) {
                   ariaLabel={s.label}
                   className="sm:px-4"
                 >
-                  <s.icon size={14} />
+                  <s.icon className="md:size-4 size-5" />
                   <span className="hidden sm:inline">{s.label}</span>
                 </OutlineButton>
               ))}
