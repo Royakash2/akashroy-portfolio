@@ -74,10 +74,10 @@ export const site = {
     "I don't ship junk or cut corners. High standards and clean architecture aren't optional—they're the foundation. And I do my finest work when driven by genuine curiosity.",
   ],
   tldr: [
-    "Building products.",
-    "Learning technologies.",
-    "Shipping consistently.",
-    "Obsessed with clean code.",
+    "Building products",
+    "Learning constantly",
+    "Chasing clean architecture.",
+    "Curious by default.",
   ],
   status: {
     available: true,
