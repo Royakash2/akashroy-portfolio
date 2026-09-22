@@ -7,6 +7,7 @@ import { Shell } from "@/components/layout/Shell";
 import { site } from "@/config/site";
 import { MapPin, Download, RotateCw } from "lucide-react";
 import { OutlineButton } from "@/components/ui/OutlineButton";
+import { toast } from "sonner";
 
 const HEADLINE_TITLES = [
   "Full Stack Developer",
@@ -119,7 +120,7 @@ export function Hero() {
           </div>
 
           {/* Resume Download Button */}
-          <OutlineButton href={site.socials.resume} target="_blank">
+          <OutlineButton onClick={() => toast("Resume will be added soon!", { description: "I am currently updating my resume. Check back later.", icon: "📝" })}>
             <Download className="size-3.5 transition-transform duration-200 group-hover:translate-y-0.5" />
             <span>Resume</span>
           </OutlineButton>
