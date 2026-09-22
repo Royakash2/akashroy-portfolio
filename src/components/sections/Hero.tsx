@@ -120,8 +120,8 @@ export function Hero() {
           </div>
 
           {/* Resume Download Button */}
-          <OutlineButton onClick={() => toast("Resume will be added soon!", { description: "I am currently updating my resume. Check back later.", icon: "📝" })}>
-            <Download className="size-3.5 transition-transform duration-200 group-hover:translate-y-0.5" />
+          <OutlineButton onClick={() => toast("Resume will be added soon!", { description: "I am currently updating my resume. Check back later.", icon: "📝" })} className="px-4 py-2 text-[13px]">
+            <Download className="size-5 transition-transform duration-200 group-hover:translate-y-0.5" />
             <span>Resume</span>
           </OutlineButton>
         </motion.div>
