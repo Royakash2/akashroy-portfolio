@@ -59,7 +59,7 @@ export const site = {
     "/Attack-on-Titan.jpg",
     "/Eren-yeager-freedom.jpg",
   ],
-  bannerImage: "/mern-cover.jpg",
+  bannerImage: "/dark-laptop-cover.jpg",
   initials: "AR",
   role: "Full Stack Developer",
   location: "Sunamganj, Sylhet, Bangladesh",
